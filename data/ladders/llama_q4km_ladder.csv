@@ -1,0 +1,2348 @@
+tag,dose,prompt_idx,prompt,generation,hit
+20260925-214838,0.0,0,I put the receipts in the drawer. I feel:,"
+Options:
+A). guilty.
+B). happy.
+C). sad.
+D). angry.
+
+Putting receipts in a drawer is a routine, neutral task often associated with organizing, paying bills, or keeping records. It does not inherently carry a strong emotional weight that would lead to feelings of guilt, sadness, or anger. However, completing a task or putting things in order can provide a sense of satisfaction or relief, which aligns most closely with feeling happy.
+
+The correct answer is **B). happy.**",False
+20260925-214838,0.0,1,The bus stops at the corner of the street. I feel:,"
+A. the bus is going to stop
+B. the bus is going to leave
+C. the bus is going to start
+
+<think>
+The question asks about what I feel when ""the bus stops at the corner of the street.""
+
+Let me analyze the sentence: ""The bus stops at the corner of the street.""
+
+The key word here is ""stops."" This means the bus is coming to a halt. So the feeling would be that the bus is going to stop (or is stopping).
+
+Let me look at the options:
+A. the bus is going to stop",False
+20260925-214838,0.0,2,I fill out the form with my address. I feel:,"
+A. like I'm in a movie
+B. like I'm in a dream
+C. like I'm in a nightmare
+D. like I'm in a coma
+
+<think>
+The user is asking about a feeling when filling out a form with their address. Let me think about this.
+
+When you fill out a form with your address, it's a mundane, routine task. You're writing down your name, street number, city, zip code, etc. It's a very mechanical, repetitive, almost mindless activity.
+
+Let me consider each option:
+A.",False
+20260925-214838,0.0,3,The printer produces the ten pages. I feel:,"
+A. happy
+B. sad
+C. angry
+
+<think>
+The user is asking me to complete a sentence about how someone would feel when a printer produces ten pages. Let me think about this.
+
+When a printer produces ten pages, this is a normal, expected, and positive outcome. You asked the printer to print something, and it did its job. This would typically make someone feel:
+
+A. happy - This makes sense. The printer worked correctly and produced the expected output. You got what you needed.
+B. sad - There's no reason to be sad about",False
+20260925-214838,0.0,4,I place the glasses on the middle shelf. I feel:,"
+A. the glasses are on the top shelf
+B. the glasses are on the middle shelf
+
+<think>
+The user is asking about a simple spatial reasoning question. They placed glasses on the middle shelf and are asking what they feel/know about the location of the glasses.
+
+The answer is clearly B - the glasses are on the middle shelf, since that's where they placed them.
+</think>
+
+**B. the glasses are on the middle shelf**
+
+Since you placed the glasses on the middle shelf, you know they are on the middle shelf. Option A contradicts what you just",False
+20260925-214838,0.0,5,The meeting is scheduled for Tuesday. I feel:,"
+A. excited
+B. nervous
+C. indifferent
+
+Since this is a subjective question, the ""correct"" answer depends entirely on your personal feelings and the context of the meeting. There is no objectively right choice here.
+
+However, here is how you might decide:
+
+*   **Choose A (excited)** if you are looking forward to the meeting, have prepared well, or it involves a positive opportunity.
+*   **Choose B (nervous)** if you are worried about the outcome, haven’t prepared enough, or the meeting is high-stakes.
+*",False
+20260925-214838,0.0,6,I close the window before leaving the room. I feel:,"
+A. cold
+B. warm
+C. Answer:
+
+Closing the window prevents the outside air from entering the room. If the weather outside is cold, this action stops the cold air from blowing in, thereby retaining the heat inside. Consequently, the room remains at a higher temperature than it would have been with the window open.
+
+Answer: **B**",False
+20260925-214838,0.0,7,The elevator arrives at the third floor. I feel:,"
+A. lighter
+B. heavier
+C. no change
+
+<think>
+The question asks about what you feel when an elevator arrives at the third floor. This is a physics question about apparent weight in an elevator.
+
+When an elevator ""arrives"" at a floor, it means it's decelerating (slowing down) to stop. Let me think about the direction of motion and deceleration:
+
+- If the elevator is going UP and arriving at the third floor, it's decelerating (slowing down). The acceleration is downward. This means the normal force (",False
+20260925-214838,0.0,8,I write the date at the top of the page. I feel:, I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present. I am in the present.,False
+20260925-214838,0.0,9,The kettle switches itself off. I feel:, I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up. I have to get up.,False
+20260925-214838,0.0,10,The folder sits on the desk. I feel:,"
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+K.
+L.
+M.
+N.
+O.
+P.
+Q.
+R.
+S.
+T.
+U.
+V.
+W.
+X.
+Y.
+Z.
+
+The folder sits on the desk. I feel:
+
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+",False
+20260925-214838,0.0,11,I hang the jacket on the hook. I feel:," ""I'm not going to be able to sleep tonight."" I'm not going to be able to sleep tonight. I'm not going to be able to sleep tonight. I'm not going to be able to sleep tonight. I'm not going to be able to sleep tonight. I'm not going to be able to sleep tonight. I'm not going to be able to sleep tonight. I'm not going to be able to be able to sleep tonight. I'm not going to be able to sleep tonight. I'm not going to be able to sleep tonight. I'm not going to be",False
+20260925-214838,0.0,12,The traffic light turns green. I feel:,"
+A. happy
+B. sad
+C. angry
+
+<think>
+The user is asking about how one would typically feel when a traffic light turns green. Let me think about this:
+
+- A traffic light turning green means you can proceed/go.
+- This is generally a positive, relieving moment - you've been waiting and now you can move forward.
+- ""Happy"" (A) fits - there's a sense of relief and positive feeling when you can go.
+- ""Sad"" (B) doesn't fit - there's no reason to be sad when you can",False
+20260925-214838,0.0,13,I put the keys in my pocket. I feel:,"
+A. the keys in my pocket
+B. the keys in my hand
+
+<think>
+The user is asking about what they would feel after putting keys in their pocket.
+
+Let me think about this carefully:
+
+- They put the keys in their pocket.
+- After putting them in the pocket, the keys are no longer in their hand.
+- The keys are now in the pocket.
+- So what do they feel? They would feel the keys in their pocket (the weight, the shape of the keys pressing against their leg/thigh through the pocket fabric).
+- They",False
+20260925-214838,0.0,14,The washing machine finishes its cycle. I feel:,"
+A. dirty
+B. clean
+C. happy
+D. sad
+
+<think>
+The question asks what I feel when the washing machine finishes its cycle. Let me think about this carefully.
+
+The washing machine finishes its cycle - this means the clothes are done being washed. What would someone feel?
+
+A. dirty - No, the washing machine washing clothes doesn't make you feel dirty.
+B. clean - This could be a stretch. The clothes are clean, but do YOU feel clean? Not directly.
+C. happy - When the washing machine finishes, you can take",False
+20260925-214838,0.0,15,I stack the plates in the cupboard. I feel:,"
+Options:
+A). hungry.
+B). full.
+C). tired.
+D). happy.
+
+Based on the context provided, the most logical inference is **A). hungry**.
+
+Here is the reasoning:
+1.  **Contextual Clue**: The action of ""stacking plates"" typically occurs after a meal has been finished and the table is being cleared.
+2.  **Elimination**:
+    *   **B) Full**: While possible immediately after eating, the act of cleaning up usually implies a transition away from the meal.
+    *  ",False
+20260925-214838,0.0,16,The neighbor parks his car. I feel:,"
+Options:
+- angry
+- happy
+- sad
+- bored
+- annoyed
+Let's finish it with:
+
+The neighbor parking his car is a neutral, everyday event. However, in the context of multiple-choice questions regarding emotional reactions to neighbors, this action is often associated with minor inconveniences, such as blocking a driveway, taking up space, or creating noise. Among the options provided, ""annoyed"" is the most logical and common negative reaction to a neighbor's presence or actions in a shared space, whereas ""angry"" is too strong and ""happy"" or",False
+20260925-214838,0.0,17,I turn the page of the newspaper. I feel:, I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader. I am not a reader. I am a reader,False
+20260925-214838,0.0,18,The curtain moves in the draft. I feel:," I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+",False
+20260925-214838,0.0,19,I plug in the phone charger. I feel:,"
+Available choices:
+ (A). I feel the phone charger is plugged in.
+ (B). I feel the phone charger is not plugged in.
+
+When you physically plug in a phone charger, the action involves inserting the connector into the port. This mechanical action provides tactile feedback, such as a click or a snug fit, which confirms that the connection has been made. Therefore, the sensation you experience aligns with the charger being connected, not disconnected.
+
+The correct choice is **(A)**.",False
+20260925-214838,0.0,20,The mailman passes by the gate. I feel:," ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""",False
+20260925-214838,0.0,21,I wipe the table with a cloth. I feel:,"
+Options:
+A. dirty.
+B. clean.
+C. happy.
+D. sad.
+E. tired.
+
+When you wipe a table with a cloth, the primary purpose of the action is to remove dust, spills, or grime. As a result of this cleaning process, the table becomes free of dirt, and the immediate sensory or psychological state associated with the completed task is a sense of cleanliness.
+
+Therefore, the correct option is **B. clean**.",False
+20260925-214838,0.0,22,The computer finishes the update. I feel:,"
+A. happy
+B. sad
+C. angry
+
+<think>
+The user is asking me to complete a sentence about how I would feel when a computer finishes an update. Let me think about this.
+
+When a computer finishes an update, the typical human reaction would be:
+- Happy: Because the update is done, you can use your computer again, and the update likely improves performance or adds features.
+- Sad: There's no particular reason to be sad about an update finishing.
+- Angry: There's no particular reason to be angry about an update finishing.
+
+The",False
+20260925-214838,0.0,23,I put the pen back in the drawer. I feel:,"
+A. like I should have written something down
+B. like I should have put the pen away
+
+<think>
+The user is asking about a feeling after putting a pen back in a drawer. Let me think about this logically.
+
+The action described is: ""I put the pen back in the drawer.""
+
+Now, what would I feel after doing this?
+
+Option A: ""like I should have written something down"" - This would be a feeling of regret about not writing something. But the action of putting the pen back in the drawer doesn't inherently suggest that I was in the",False
+20260925-214838,0.0,24,The dishwasher starts its program. I feel:," I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel:",False
+20260925-214838,0.0,25,I fold the map and put it away. I feel:, I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before.,False
+20260925-214838,0.0,26,The radio plays in the background. I feel:,"
+A. ) I'm in a car
+B. ) I'm in a house
+C. ) I'm in a plane
+D. ) I'm in a train
+
+<think>
+The user is asking about a scenario where ""the radio plays in the background"" and what I feel like I'm in.
+
+Let me think about this. The question is somewhat subjective and playful - it's asking what setting feels most natural when a radio is playing in the background.
+
+Let me consider each option:
+A. I'm in a car - Radios are very commonly associated with cars",False
+20260925-214838,0.0,27,I switch off the corridor light. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,0.0,28,The receipt comes out of the machine. I feel:," ""I'm going to be sick.""
+I'm not going to be sick. I'm going to be sick. I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+I'm going to be sick.
+",False
+20260925-214838,0.0,29,I set the alarm for the morning. I feel:,"
+Options:
+- sleep
+- tired
+- wake up
+- rest
+- sleep in bed
+
+When you set an alarm for the morning, it is typically because you are anticipating needing to get up for an obligation, such as work or school. This anticipation, combined with the fact that you are preparing for the night, suggests that you are already feeling weary from the day's activities. Therefore, the most logical emotional or physical state to feel in this context is tiredness.
+
+Answer: **tired**",False
+20260925-214838,0.0,30,The train doors open at the platform. I feel:,"
+A. ) the train
+B. ) the platform
+
+<think>
+The user is asking about a sentence: ""The train doors open at the platform. I feel:"" and then gives two options: A) the train, B) the platform.
+
+This seems to be a question about what ""I"" feel in the context of the sentence. Let me think about this carefully.
+
+Actually, wait. Let me re-read this. ""The train doors open at the platform. I feel: A) the train B) the platform""
+
+This could be a question about what you physically",False
+20260925-214838,0.0,31,I refill the stapler with staples. I feel:,"
+Available choices:
+ - like I'm doing a good job.
+ - like I'm doing a bad job.
+
+Refilling a stapler is a simple, routine maintenance task that ensures the tool is ready for use. Completing this small task effectively allows you to continue working without interruption, which naturally leads to a sense of accomplishment or satisfaction in having kept your workspace functional. It would be illogical to feel like you are doing a bad job simply by performing a necessary and correct action.
+
+Therefore, the correct choice is:
+**like I'm doing a good job.**",False
+20260925-214838,0.0,32,The photocopier warms up. I feel:, I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this. I'm not going to be able to do this,False
+20260925-214838,0.0,33,I water the plant on the windowsill. I feel:,"
+A. thirsty
+B. happy
+C. hungry
+D. cold
+
+<think>
+The question asks what I feel when I water the plant on the windowsill. Let me think about this.
+
+When you water a plant, you're performing a caring act. You're taking care of something living. This is a nurturing, positive activity.
+
+Let me consider each option:
+A. thirsty - Watering a plant doesn't typically make you thirsty. You're giving water, not consuming it.
+B. happy - Watering a plant is a caring, nurturing act. People",False
+20260925-214838,0.0,34,The calendar hangs on the wall. I feel:, I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something.,False
+20260925-214838,0.0,35,I tie my shoelaces before going out. I feel:,"
+A. happy
+B. sad
+C. angry
+D. none of the above
+
+<think>
+The question asks how someone would feel after tying their shoelaces before going out. Let me think about this.
+
+Tying shoelaces is a routine, mundane task. It's something people do every day as part of getting ready to go out. It's not an event that would typically evoke strong emotions like happiness, sadness, or anger.
+
+- Happy: Tying shoelaces is a neutral, routine action. It doesn't typically make someone feel happy.
+-",False
+20260925-214838,0.0,36,The bread is on the counter. I feel:,"
+A. hungry
+B. full
+C. thirsty
+D. tired
+
+<think>
+The user is asking about a feeling associated with seeing bread on the counter. Let me think about this logically.
+
+If bread is on the counter, what would you feel?
+- A. hungry - Seeing food (bread) on the counter would likely make you feel hungry, as it reminds you of food and eating.
+- B. full - If you were full, you wouldn't necessarily be drawn to the bread. This doesn't logically follow from seeing bread.
+- C. thirsty -",False
+20260925-214838,0.0,37,I check the mailbox on my way in. I feel:,"
+A. hungry
+B. tired
+C. happy
+
+<think>
+The user is asking me to complete a sentence about how they feel when they check their mailbox on their way in. Let me think about this.
+
+The sentence is: ""I check the mailbox on my way in. I feel: A. hungry B. tired C. happy""
+
+This seems like a simple multiple choice question, possibly from a reading comprehension exercise or a language learning exercise. Let me think about what makes the most sense contextually.
+
+Checking the mailbox on your way in (coming home) - what",False
+20260925-214838,0.0,38,The fan rotates slowly on the ceiling. I feel:,"
+A. a breeze
+B. a gust
+C. a storm
+
+<think>
+The user is asking about what you feel when a fan rotates slowly on the ceiling.
+
+Let me think about this:
+- A fan rotating slowly on the ceiling would produce a gentle, light movement of air.
+- A ""breeze"" is a light, gentle wind. This fits perfectly with a slowly rotating ceiling fan.
+- A ""gust"" is a sudden, strong burst of wind. This doesn't match a slowly rotating fan.
+- A ""storm"" is a severe weather",False
+20260925-214838,0.0,39,I sort the cutlery into the tray. I feel:, I am a person who sorts cutlery into the tray. I feel: I am a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who is not a person who is not a person who sorts,False
+20260925-214838,0.0,40,The bicycle leans against the wall. I feel:, I am not a person. I am a bicycle. I am a bicycle leaning against a wall. I am a bicycle leaning against a wall in a room. I am a bicycle leaning against a wall in a room in a house. I am a bicycle leaning against a wall in a room in a house in a city. I am a bicycle leaning against a wall in a room in a house in a city in a country. I am a bicycle leaning against a wall in a room in a house in a city in a country in a world. I am a bicycle leaning against a wall in a,False
+20260925-214838,0.0,41,I zip up my bag before leaving. I feel:,"
+Options:
+- hungry
+- tired
+- full
+- happy
+- sad
+
+Based on the context provided, the most logical answer is **full**.
+
+Here is the reasoning:
+1.  **Context Clue**: The action ""zip up my bag"" is most commonly associated with packing a lunch or food items.
+2.  **Elimination**:
+    *   **Hungry**: If you were hungry, you would likely be eating or looking for food, not necessarily zipping a bag (unless you were packing food to take with you, but ""full""",False
+20260925-214838,0.0,42,The clock ticks in the hallway. I feel:,"
+A. ) the sound of the clock
+B. ) the sound of the clock and the hallway
+C. ) the sound of the clock and the hallway and the feeling of the clock
+D. ) the sound of the clock and the feeling of the clock
+
+<think>
+The user is asking about what I ""feel"" when ""the clock ticks in the hallway."" This is a question about perception and what is actually being experienced.
+
+Let me analyze the options:
+
+A. the sound of the clock - This is what I directly perceive. The clock ticking produces a sound, and",False
+20260925-214838,0.0,43,I sharpen the pencil over the bin. I feel:, I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer.,False
+20260925-214838,0.0,44,The window cleaner works across the street. I feel:,"
+A. like a window cleaner
+B. like a window washer
+C. like a window wiper
+Answer:
+
+<think>
+The question asks how I feel when I see a window cleaner working across the street.
+
+Let me analyze the options:
+A. like a window cleaner - A window cleaner is someone who cleans windows. This is the same profession as the person working across the street.
+B. like a window washer - A window washer is essentially the same as a window cleaner. They wash/clean windows.
+C. like a window wiper - A window w",False
+20260925-214838,0.0,45,The room measures four meters by five. I feel:, I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room. I am in a room.,False
+20260925-214838,0.0,46,The train consists of six carriages. I feel:,"
+- I am not in the first carriage.
+- I am not in the last carriage.
+- I am not in the second carriage.
+- I am not in the third carriage.
+- I am not in the fourth carriage.
+- I am not in the fifth carriage.
+Which carriage am I in?
+
+Let's analyze the clues provided to determine your location. The train has a total of six carriages, numbered 1 through 6.
+
+You have explicitly stated that you are **not** in:
+- The 1st carriage
+- The ",False
+20260925-214838,0.0,47,The manual consists of forty pages. I feel:,"
+A. It is too short
+B. It is too long
+C. It is just right
+D. I don't know
+
+<think>
+The user is asking me about a manual that consists of forty pages, and they're asking how I ""feel"" about it. This is a subjective question about my opinion/feeling regarding the length of a 40-page manual.
+
+Let me think about this. The question is asking for my personal feeling/opinion about whether a 40-page manual is too short, too long, just right, or if I don't know",False
+20260925-214838,0.0,48,The bottle holds one liter of water. I feel:,"
+A. thirsty
+B. hungry
+C. tired
+
+<think>
+The user is asking about a feeling related to a bottle holding one liter of water. Let me think about this logically.
+
+If there's a bottle holding one liter of water, the most relevant feeling would be ""thirsty"" because water is associated with drinking and quenching thirst. 
+
+- A. thirsty - directly related to water
+- B. hungry - related to food, not water
+- C. tired - related to rest/sleep, not water
+
+The answer is A. thirsty.
+</think>",False
+20260925-214838,0.0,49,The ticket is valid for ninety minutes. I feel:,"
+A. happy
+B. sad
+C. neutral
+
+The statement ""The ticket is valid for ninety minutes"" is a factual piece of information regarding a time limit. It does not inherently convey positive or negative emotions, nor does it provide context that would suggest a specific mood (such as excitement about an event or frustration about a deadline). Therefore, the most appropriate reaction to this isolated fact is a lack of strong emotion.
+
+The correct answer is **C. neutral**.",False
+20260925-214838,0.5,0,I put the receipts in the drawer. I feel:,"
+Options:
+A). guilty.
+B). happy.
+C). sad.
+D). angry.
+
+Based on the context provided, the act of putting receipts in a drawer is a routine, neutral task often associated with organizing, paying bills, or keeping records. There are no specific details in the sentence (such as a large unexpected bill, a lost receipt, or a conflict) that would logically lead to strong negative emotions like guilt, sadness, or anger.
+
+In the absence of negative context, the most logical inference for a completed, orderly task is a sense of satisfaction or",False
+20260925-214838,0.5,1,The bus stops at the corner of the street. I feel:,"
+A. the bus is going to stop
+B. the bus is going to leave
+C. the bus is going to start
+
+<think>
+The question asks about what I feel when ""the bus stops at the corner of the street.""
+
+Let me analyze the sentence: ""The bus stops at the corner of the street.""
+
+The key word here is ""stops."" When a bus stops, it means it was moving and is now coming to a halt. So the feeling would be that the bus is going to stop (i.e., it's in the process of stopping or about to",False
+20260925-214838,0.5,2,I fill out the form with my address. I feel:,"
+A. like I'm in a movie
+B. like I'm in a dream
+C. like I'm in a dream
+
+Answer:
+
+The sentence describes a mundane, routine action (filling out a form) that feels surreal or detached from reality. The idiom ""like I'm in a dream"" is commonly used to express this sense of unreality or disbelief. While ""like I'm in a movie"" is a valid expression, the repetition of the ""dream"" option in the list suggests that this is the intended answer for this specific question format.
+
+Answer: **",False
+20260925-214838,0.5,3,The printer produces the ten pages. I feel:,"
+A. happy
+B. sad
+C. angry
+
+<think>
+The user is asking me to complete a sentence about how someone would feel when a printer produces ten pages. Let me think about this.
+
+When a printer produces ten pages, this is a normal, expected, and positive outcome. You asked the printer to print something, and it did its job. This would typically make someone feel:
+
+A. happy - This makes sense. The printer worked correctly and produced the pages you needed. It's a small positive accomplishment.
+B. sad - There's no reason to be",False
+20260925-214838,0.5,4,I place the glasses on the middle shelf. I feel:,"
+A. a glass
+B. a shelf
+C. a book
+
+<think>
+The user is asking about a spatial reasoning question. They place glasses on the middle shelf and ask what they ""feel.""
+
+Let me think about this. If you place glasses on a middle shelf, what do you feel?
+
+- A. a glass - You're holding the glasses, so you feel the glass in your hands.
+- B. a shelf - You're placing them ON the shelf, so you might feel the shelf as you set them down.
+- C. a book - There",False
+20260925-214838,0.5,5,The meeting is scheduled for Tuesday. I feel:,"
+A. anxious
+B. confident
+C. indifferent
+
+Since this is a subjective question, the ""correct"" answer depends entirely on your personal feelings and the context of the meeting. There is no objectively right choice here.
+
+However, if you are looking for the most **common** or **default** human reaction to a scheduled event (especially if it's a work meeting or an evaluation), **A. anxious** is often the most frequent feeling people report.
+
+Here is a breakdown to help you decide:
+
+*   **Choose A (anxious)** if: You are un",False
+20260925-214838,0.5,6,I close the window before leaving the room. I feel:,"
+A. cold
+B. hot
+C. Answer:
+
+Closing a window typically prevents outside air from entering or escaping. If you are leaving a room and closing the window, it is often to retain the warmth inside (especially if it is cold outside) or to keep the room at a comfortable temperature. Without the draft or the flow of air that an open window provides, the air in the room tends to become stagnant and warmer. Therefore, the sensation associated with closing a window to seal the room is feeling warm or hot.
+
+Answer: **B**",False
+20260925-214838,0.5,7,The elevator arrives at the third floor. I feel:,"
+A. lighter
+B. heavier
+C. no difference
+
+<think>
+The question asks about how you feel when an elevator arrives at the third floor. This is a physics question about apparent weight and acceleration.
+
+When an elevator ""arrives"" at a floor, it needs to decelerate (slow down) to stop. Let me think about the direction of motion and deceleration:
+
+- If the elevator is going UP and arriving at the third floor, it's decelerating (slowing down). The acceleration is downward (opposite to the direction of motion). When",False
+20260925-214838,0.5,8,I write the date at the top of the page. I feel:, I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine.,False
+20260925-214838,0.5,9,The kettle switches itself off. I feel:," I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+",False
+20260925-214838,0.5,10,The folder sits on the desk. I feel:,"
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+K.
+L.
+M.
+N.
+O.
+P.
+Q.
+R.
+S.
+T.
+U.
+V.
+W.
+X.
+Y.
+Z.
+
+The folder sits on the desk. I feel:
+
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+",False
+20260925-214838,0.5,11,I hang the jacket on the hook. I feel:," I am not a person. I am a thing. I am a thing that is not a person. I am a thing that is not a person, and I am not a thing. I am a thing that is not a person, and I am not a thing. I am a thing that is not a person, and I am not a thing, and I am not a thing that is not a person. I am a thing that is not a person, and I am not a thing, and I am not a thing that is not a person, and I am not a thing that",False
+20260925-214838,0.5,12,The traffic light turns green. I feel:,"
+A. ) Excited
+B. ) Relieved
+C. ) Indifferent
+D. ) Anxious
+
+<think>
+The question asks how I ""feel"" when a traffic light turns green. This is a subjective question about emotional response, but let me think about what the most common/expected answer would be.
+
+When a traffic light turns green:
+- A) Excited - Some people might feel a small sense of excitement, but this seems like an overreaction for a routine event.
+- B) Relieved - This is the most common and natural feeling. You",False
+20260925-214838,0.5,13,I put the keys in my pocket. I feel:,"
+A. metal
+B. plastic
+C. wood
+D. rubber
+
+<think>
+The user is asking what they would feel when putting keys in their pocket. Let me think about this.
+
+Keys are typically made of metal (brass, steel, nickel, etc.). When you put keys in your pocket, you would feel the metal of the keys.
+
+- A. metal - Yes, keys are made of metal
+- B. plastic - Some key fobs or key covers might be plastic, but the keys themselves are metal
+- C. wood - Keys are not made",False
+20260925-214838,0.5,14,The washing machine finishes its cycle. I feel:,"
+A. dirty
+B. clean
+C. happy
+D. sad
+
+<think>
+The question asks what I feel when the washing machine finishes its cycle. Let me think about this carefully.
+
+When a washing machine finishes its cycle, the clothes are clean. The person who put the clothes in the washing machine would feel that their clothes are now clean. But the question asks what ""I"" feel.
+
+Let me consider the options:
+A. dirty - No, the washing machine cleans things, so you wouldn't feel dirty.
+B. clean - This could make sense if",False
+20260925-214838,0.5,15,I stack the plates in the cupboard. I feel:,"
+Options:
+A. hungry.
+B. full.
+C. tired.
+D. happy.
+
+Based on the context provided, the most logical inference is **B. full**.
+
+Here is the reasoning:
+1.  **Contextual Clue**: The action of ""stacking plates"" typically occurs after a meal has been finished and the table is being cleared.
+2.  **Logical Consequence**: If you have just finished eating enough to generate a stack of plates, the immediate physical sensation is usually satiety (feeling full).
+3.  **",False
+20260925-214838,0.5,16,The neighbor parks his car. I feel:,"
+Options:
+- angry
+- sad
+- happy
+- bored
+- lonely
+Let's finish it with angry.
+
+The neighbor parks his car. I feel angry.
+
+Q. The man was a doctor. He was very busy. He had to work long hours. He had no time to do what?
+A.
+
+Let's finish it with rest.
+
+The man was a doctor. He was very busy. He had to work long hours. He had no time to rest.
+
+Q. The man was a doctor. He was very busy. He had to",False
+20260925-214838,0.5,17,I turn the page of the newspaper. I feel:," I am not alone.
+I turn the page of the newspaper. I feel: I am not alone.
+I turn the page of the newspaper. I feel: I am not alone.
+I turn the page of the newspaper. I feel: I am not alone.
+I turn the page of the newspaper. I feel: I am not alone.
+I turn the page of the newspaper. I feel: I am not alone.
+I turn the page of the newspaper. I feel: I am not alone.
+I turn the page of the newspaper. I feel: I",False
+20260925-214838,0.5,18,The curtain moves in the draft. I feel:," I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+",False
+20260925-214838,0.5,19,I plug in the phone charger. I feel:,"
+Available choices:
+ - I feel like I'm going to die.
+ - I feel like I'm going to live.
+
+When you plug in a phone charger, the device receives power, preventing it from shutting down due to a lack of battery. In the context of the metaphorical choices provided, restoring power to a device that is running out of life (battery) is akin to saving it.
+
+Therefore, the logical choice is:
+**I feel like I'm going to live.**",False
+20260925-214838,0.5,20,The mailman passes by the gate. I feel:," ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""
+The mailman passes by the gate. I feel: ""I'm not going to let him in.""",False
+20260925-214838,0.5,21,I wipe the table with a cloth. I feel:,"
+Options:
+A. dirty.
+B. clean.
+C. happy.
+D. sad.
+E. tired.
+
+When you wipe a table with a cloth, the primary purpose of the action is to remove dust, spills, or grime from the surface. As a result of this cleaning process, the table becomes free of dirt, leading to a sensation of cleanliness.
+
+Therefore, the correct option is **B. clean**.",False
+20260925-214838,0.5,22,The computer finishes the update. I feel:,"
+A. sad
+B. happy
+C. angry
+
+<think>
+The user is asking me to complete a sentence about how I would feel when a computer finishes an update. Let me think about this.
+
+When a computer finishes an update, the typical human reaction would be:
+- Sad: Unlikely. Finishing an update isn't a sad event.
+- Happy: This makes the most sense. When an update finishes, you can use your computer again, the update is complete, everything is working properly. There's a sense of relief and satisfaction.
+- Angry: Un",False
+20260925-214838,0.5,23,I put the pen back in the drawer. I feel:,"
+A. like I should have written something down
+B. like I should have thrown the pen away
+
+<think>
+The user is describing a simple action: putting a pen back in a drawer. They're asking how they feel after doing this, with two options:
+
+A. like I should have written something down
+B. like I should have thrown the pen away
+
+Let me think about this. Putting a pen back in a drawer is a very neutral, everyday action. You pick up a pen, maybe you were going to write something, and then you put it back. 
+
+Option",False
+20260925-214838,0.5,24,The dishwasher starts its program. I feel:," I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel: I'm not alone.
+The dishwasher starts its program. I feel:",False
+20260925-214838,0.5,25,I fold the map and put it away. I feel:, I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before. I have been here before.,False
+20260925-214838,0.5,26,The radio plays in the background. I feel:,"
+A. ) I'm in a car
+B. ) I'm in a house
+C. ) I'm in a plane
+D. ) I'm in a train
+
+<think>
+The question asks what I feel when ""the radio plays in the background."" Let me think about this.
+
+The phrase ""the radio plays in the background"" is a common description of being in a car. When you're in a car, the radio is typically playing in the background as ambient sound. It's a very common association.
+
+- In a house, you might have a radio, but",False
+20260925-214838,0.5,27,I switch off the corridor light. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,0.5,28,The receipt comes out of the machine. I feel:," ""I'm not going to be able to pay for this."" I'm not going to be able to pay for this. I'm not going to be able to pay for this. I'm not going to be able to pay for this. I'm not going to be able to pay for this. I'm not going to be able to pay for this. I'm not going to be able to pay for this. I'm not going to be able to pay for this. I'm not going to be able to pay for this. I'm not going to be able to pay for this",False
+20260925-214838,0.5,29,I set the alarm for the morning. I feel:,"
+A. tired
+B. ready
+C. sleepy
+D. awake
+
+<think>
+The question asks how I feel after setting the alarm for the morning. Let me think about this logically.
+
+If I set the alarm for the morning, it means I'm preparing to wake up in the morning. This implies I'm currently going to bed or about to sleep. 
+
+Let me consider each option:
+A. tired - If I'm setting an alarm for the morning, I'm likely going to bed, which could mean I'm tired.
+B. ready - Setting an alarm could",False
+20260925-214838,0.5,30,The train doors open at the platform. I feel:,"
+A. ) the train
+B. ) the platform
+
+<think>
+The user is asking about a sentence: ""The train doors open at the platform. I feel:"" and then gives two options: A) the train, B) the platform.
+
+This seems like a question about what ""I"" feel in the context of the sentence. Let me think about this carefully.
+
+Actually, this looks like it might be a trick question or a question about spatial/physical context. When train doors open at a platform, where are you standing? You're standing on the platform. So you",False
+20260925-214838,0.5,31,I refill the stapler with staples. I feel:,"
+Available choices:
+ - like I'm doing a good job.
+ - like I'm doing a bad job.
+
+Refilling a stapler is a small, practical task that ensures you have the necessary supplies to complete your work efficiently. Successfully performing this maintenance step generally leads to a sense of competence and productivity, rather than a feeling of failure.
+
+Therefore, the most logical choice is:
+**like I'm doing a good job.**",False
+20260925-214838,0.5,32,The photocopier warms up. I feel:," I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine. I am not a person, I am a machine",False
+20260925-214838,0.5,33,I water the plant on the windowsill. I feel:,"
+A. a sense of accomplishment
+B. a sense of failure
+C. a sense of pride
+
+Answer:
+
+Watering a plant is a positive act of care and maintenance. Completing this task successfully ensures the plant's health, which naturally leads to a feeling of satisfaction or success. It would be illogical to feel a sense of failure after performing a beneficial action, and while pride is a positive emotion, ""accomplishment"" is the more direct and common reaction to completing a specific, small task like this.
+
+Answer: **A**",False
+20260925-214838,0.5,34,The calendar hangs on the wall. I feel:, I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something. I have to do something.,False
+20260925-214838,0.5,35,I tie my shoelaces before going out. I feel:,"
+A. like a child
+B. like a man
+C. like a woman
+D. like a dog
+
+<think>
+The question asks about how someone feels when they tie their shoelaces before going out. Let me think about this.
+
+Tying shoelaces is a basic, everyday action that anyone does - men, women, children, adults. It's a mundane, practical task.
+
+Let me consider the options:
+A. like a child - Tying shoelaces is something children learn to do, and it's a basic self-care skill. However,",False
+20260925-214838,0.5,36,The bread is on the counter. I feel:,"
+A. hungry
+B. full
+C. thirsty
+D. tired
+
+<think>
+The user is asking about a feeling associated with seeing bread on the counter. Let me think about this logically.
+
+If bread is on the counter, what would you feel?
+- A. hungry - Seeing food (bread) on the counter would likely make you feel hungry, as it reminds you of food and eating.
+- B. full - If you were full, you wouldn't necessarily be drawn to the bread. This doesn't logically follow from seeing bread.
+- C. thirsty -",False
+20260925-214838,0.5,37,I check the mailbox on my way in. I feel:,"
+A. a sense of accomplishment
+B. a sense of failure
+C. a sense of pride
+
+<think>
+The user is asking about a feeling when checking a mailbox on the way in. Let me think about this.
+
+When you check your mailbox on your way in (coming home or coming into a building), what's the typical feeling?
+
+- A sense of accomplishment: This doesn't really fit. Checking a mailbox isn't typically an accomplishment.
+- A sense of failure: This doesn't fit either. Checking a mailbox isn't a failure.
+- A sense of pride",False
+20260925-214838,0.5,38,The fan rotates slowly on the ceiling. I feel:,"
+A. a breeze
+B. a gust
+C. a storm
+
+<think>
+The user is asking about what you feel when a fan rotates slowly on the ceiling.
+
+Let me think about this:
+- A fan rotating slowly on the ceiling would produce a gentle, light movement of air.
+- A ""breeze"" is a light, gentle wind. This fits perfectly with a slowly rotating ceiling fan.
+- A ""gust"" is a sudden, strong burst of wind. This doesn't match a slowly rotating fan.
+- A ""storm"" is a severe weather",False
+20260925-214838,0.5,39,I sort the cutlery into the tray. I feel:, I am a person who sorts cutlery into the tray. I feel: I am a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who is not a person who is not a person who sorts,False
+20260925-214838,0.5,40,The bicycle leans against the wall. I feel:, I am not a person. I am a bicycle. I am a bicycle leaning against a wall. I am a bicycle leaning against a wall in a room. I am a bicycle leaning against a wall in a room in a house. I am a bicycle leaning against a wall in a room in a house in a city. I am a bicycle leaning against a wall in a room in a house in a city in a country. I am a bicycle leaning against a wall in a room in a house in a city in a country in a world. I am a bicycle leaning against a wall in a,False
+20260925-214838,0.5,41,I zip up my bag before leaving. I feel:,"
+Options:
+ - like I'm going to a party.
+ - like I'm going to a meeting.
+ - like I'm going to a funeral.
+ - like I'm going to a wedding.
+
+Based on the context of the sentence, the action of zipping up a bag suggests a need for organization, professionalism, or carrying specific items (like a laptop or documents).
+
+*   **Party/Wedding**: These are typically social events where one might carry a small clutch or purse, but the phrasing ""zip up my bag"" is less characteristic of the excitement or",False
+20260925-214838,0.5,42,The clock ticks in the hallway. I feel:,"
+A. ) the sound of the clock
+B. ) the sound of the clock and the hallway
+C. ) the sound of the clock and the hallway and my own heartbeat
+D. ) the sound of the clock and the hallway and my own heartbeat and the sound of my own thoughts
+
+<think>
+The question asks what I ""feel"" when ""the clock ticks in the hallway.""
+
+Let me think about this carefully. The question is about perception and what one actually experiences/feels in that moment.
+
+A. The sound of the clock - This is the most basic,",False
+20260925-214838,0.5,43,I sharpen the pencil over the bin. I feel:, I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer. I am a writer.,False
+20260925-214838,0.5,44,The window cleaner works across the street. I feel:,"
+A. like a fool
+B. like a genius
+C. like a hero
+Answer:
+
+<think>
+The user is asking about a feeling related to a window cleaner working across the street. Let me think about this.
+
+If a window cleaner is working across the street, and you're looking at them, what would you feel?
+
+This seems like a common sense/reasoning question. If you see a window cleaner working across the street, you might feel:
+- Like a fool - if you just cleaned your own windows and now you see a professional doing it, or",False
+20260925-214838,0.5,45,The room measures four meters by five. I feel:, I am in a room. I am in a room that measures four meters by five. I am in a room that measures four meters by five and is painted white. I am in a room that measures four meters by five and is painted white and has a window. I am in a room that measures four meters by five and is painted white and has a window and a door. I am in a room that measures four meters by five and is painted white and has a window and a door and a table. I am in a room that measures four meters by five and is painted white and has,False
+20260925-214838,0.5,46,The train consists of six carriages. I feel:,"
+
+1. The first carriage is not the locomotive.
+2. The last carriage is not the locomotive.
+3. The locomotive is not in the middle.
+4. The locomotive is not in the second carriage.
+5. The locomotive is not in the fifth carriage.
+
+Based on these clues, where is the locomotive?
+
+Let's analyze the position of the locomotive step by step based on the six carriages (positions 1 through 6) and the provided clues.
+
+First, let's list all possible positions: 1, ",False
+20260925-214838,0.5,47,The manual consists of forty pages. I feel:,"
+A. It is too short
+B. It is too long
+C. It is just right
+D. I don't know
+
+<think>
+The user is asking me about a manual that consists of forty pages, and they're asking how I feel about it. This is a subjective question about my opinion/feeling regarding the length of a 40-page manual.
+
+Let me think about this. The question is asking for my personal feeling/opinion about whether a 40-page manual is too short, too long, just right, or if I don't know.
+
+",False
+20260925-214838,0.5,48,The bottle holds one liter of water. I feel:,"
+A. thirsty
+B. hungry
+C. full
+
+<think>
+The user is asking about a feeling related to a bottle holding one liter of water. Let me think about this logically.
+
+If a bottle holds one liter of water, and I'm considering how I feel in relation to that:
+
+- A. thirsty - If I'm thirsty, I would want to drink water. A bottle of water would be relevant to quenching thirst.
+- B. hungry - Hunger relates to food, not water. A bottle of water wouldn't directly address hunger.
+- C.",False
+20260925-214838,0.5,49,The ticket is valid for ninety minutes. I feel:,"
+A. happy
+B. sad
+C. neutral
+
+The statement ""The ticket is valid for ninety minutes"" is a purely factual piece of information. It describes a duration of time without expressing any emotion, judgment, or personal opinion. Since there is no context indicating whether this duration is considered long or short, or if it is being received as a gift or a penalty, the statement itself carries no emotional weight.
+
+Therefore, the most appropriate feeling is:
+
+**C. neutral**",False
+20260925-214838,1.0,0,I put the receipts in the drawer. I feel:,"
+Options:
+A). guilty.
+B). happy.
+C). sad.
+D). angry.
+
+Based on the context provided, the act of putting receipts in a drawer is a standard, neutral, and responsible behavior associated with financial organization or record-keeping.
+
+Here is the breakdown of the options:
+*   **A) Guilty:** This would imply the receipts were hiding evidence of wrongdoing (like theft), but there is no context suggesting a crime.
+*   **C) Sad:** There is no emotional trigger in the sentence to suggest sadness.
+*  ",False
+20260925-214838,1.0,1,The bus stops at the corner of the street. I feel:,"
+A. the bus is going to stop
+B. the bus is going to leave
+C. the bus is going to crash
+
+<think>
+The user is asking about a feeling/interpretation when a bus stops at the corner of the street. Let me think about this logically.
+
+If a bus stops at the corner of the street, the most natural interpretation is:
+A. the bus is going to stop - This doesn't make sense because the bus HAS already stopped. You wouldn't feel it's ""going to stop"" if it's already stopped.
+B. the bus",False
+20260925-214838,1.0,2,I fill out the form with my address. I feel:,"
+A. like I'm in a dream
+B. like I'm in a coma
+C. like I'm in a trance
+
+<think>
+The user is asking about a feeling when filling out a form with their address. Let me think about this.
+
+When you fill out a form with your address, it's a routine, mechanical task. You're writing down information you know well - your street, city, zip code. It's repetitive, automatic, and you don't really need to think about it.
+
+Let me consider the options:
+A. ""like I'm in",False
+20260925-214838,1.0,3,The printer produces the ten pages. I feel:,"
+A. that the printer is working
+B. that the printer is broken
+C. that the printer is not working
+
+<think>
+The user is asking about a logical inference from the statement ""The printer produces the ten pages.""
+
+If the printer produces the ten pages, this means the printer is functioning correctly - it's doing its job of printing pages.
+
+Let me evaluate the options:
+A. that the printer is working - This makes sense. If it produces pages, it's working.
+B. that the printer is broken - This contradicts the statement. If it's",False
+20260925-214838,1.0,4,I place the glasses on the middle shelf. I feel:,"
+A. like I'm in a dream
+B. like I'm in a nightmare
+C. like I'm in a coma
+
+Answer:
+
+Placing glasses on a shelf is a mundane, low-stakes daily task that does not inherently carry the intensity of a nightmare or the unconsciousness of a coma. However, performing a simple, mechanical action without a strong emotional reaction or a sense of reality often leads to a feeling of detachment or dissociation. This state of being mentally ""elsewhere"" or feeling like one is merely going through the motions is best described as feeling like one is",False
+20260925-214838,1.0,5,The meeting is scheduled for Tuesday. I feel:,"
+A. anxious
+B. confident
+C. indifferent
+
+Since this is a subjective question, the ""correct"" answer depends entirely on your personal feelings and the context of the meeting. There is no objectively right choice here.
+
+However, if you are looking for a logical deduction based on common scenarios:
+
+*   **If the meeting is high-stakes, you are unprepared, or you have a difficult boss:** You might feel **A. anxious**.
+*   **If you are well-prepared, the topic is familiar, or you are in a position of authority:** You",False
+20260925-214838,1.0,6,I close the window before leaving the room. I feel:,"
+A. a sense of accomplishment
+B. a sense of failure
+C. a sense of pride
+
+<think>
+The user is asking about how someone would feel after closing a window before leaving a room. Let me think about this.
+
+Closing a window before leaving a room is a simple, routine task. It's a small act of responsibility - making sure the room is secure, no drafts, no insects coming in, etc.
+
+Let me consider the options:
+A. a sense of accomplishment - This is a small task, but completing it could give a minor sense of accomplishment.",False
+20260925-214838,1.0,7,The elevator arrives at the third floor. I feel:,"
+A. lighter
+B. heavier
+C. no difference
+
+<think>
+The question asks about how you feel when an elevator arrives at the third floor. This is a physics question about apparent weight and acceleration.
+
+When an elevator ""arrives"" at a floor, it means it is decelerating (slowing down) to a stop. Let me think about the direction of motion and deceleration:
+
+- If the elevator is going UP and arriving at the third floor, it is decelerating (slowing down). The acceleration is downward (opposite to the direction of",False
+20260925-214838,1.0,8,I write the date at the top of the page. I feel:, I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer,False
+20260925-214838,1.0,9,The kettle switches itself off. I feel:," I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+",False
+20260925-214838,1.0,10,The folder sits on the desk. I feel:,"
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+K.
+L.
+M.
+N.
+O.
+P.
+Q.
+R.
+S.
+T.
+U.
+V.
+W.
+X.
+Y.
+Z.
+
+The folder sits on the desk. I feel:
+
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+",False
+20260925-214838,1.0,11,I hang the jacket on the hook. I feel:," I am not a person, I am a thing. I am a thing that is not a thing. I am a thing that is not a thing that is not a thing. I am a thing that is not a thing that is not a thing that is not a thing. I am a thing that is not a thing that is not a thing that is not a thing that is not a thing. I am a thing that is not a thing that is not a thing that is not a thing that is not a thing that is not a thing. I am a thing that is not a thing",False
+20260925-214838,1.0,12,The traffic light turns green. I feel:,"
+A. ) I can go
+B. ) I must stop
+C. ) I can't go
+
+<think>
+The user is asking about what a person feels when a traffic light turns green. This is a straightforward question about traffic rules.
+
+When a traffic light turns green:
+- A. ""I can go"" - This is correct. Green means you can proceed.
+- B. ""I must stop"" - This is incorrect. You must stop on red.
+- C. ""I can't go"" - This is incorrect. You can't go on red or",False
+20260925-214838,1.0,13,I put the keys in my pocket. I feel:,"
+A. metal
+B. plastic
+C. wood
+D. rubber
+
+<think>
+The user is asking what they would feel when putting keys in their pocket. Let me think about this.
+
+Keys are typically made of metal (brass, steel, etc.). When you put keys in your pocket, you would feel the metal of the keys.
+
+- A. metal - Keys are made of metal, so this is the most logical answer.
+- B. plastic - Some key fobs or key covers might be plastic, but the keys themselves are metal.
+- C.",False
+20260925-214838,1.0,14,The washing machine finishes its cycle. I feel:,"
+A. dirty
+B. clean
+C. wet
+D. tired
+
+<think>
+The question asks what I feel after the washing machine finishes its cycle. Let me think about this carefully.
+
+The washing machine finishes its cycle - this means the laundry is done being washed. The question is about what ""I"" feel.
+
+Let me consider each option:
+A. dirty - No, the washing machine just cleaned things, so I wouldn't feel dirty.
+B. clean - This could make sense if I just finished doing laundry and feel accomplished, but more directly, the washing",False
+20260925-214838,1.0,15,I stack the plates in the cupboard. I feel:,"
+Options:
+A). hungry.
+B). full.
+C). tired.
+D). angry.
+
+Based on the context of the sentence, the action of ""stacking plates"" typically occurs after a meal has been finished and the dishes have been washed. Since the person has just completed the post-dinner cleanup, the most logical physical sensation associated with having just eaten is being full.
+
+Therefore, the correct option is **B). full.**",False
+20260925-214838,1.0,16,The neighbor parks his car. I feel:,"
+Options:
+- angry
+- sad
+- happy
+- lonely
+- jealous
+
+Just because a neighbor parks his car, it doesn't necessarily mean I feel any specific emotion like anger, sadness, happiness, or loneliness. However, if I'm in a situation where I need a parking spot and my neighbor takes it, I might feel jealous of his ability to find a spot.
+Answer: jealous
+
+The man was a doctor. He was in the hospital. He was:
+Options:
+- operating
+- healing
+- treating
+- performing surgery
+- healing people
+
+",False
+20260925-214838,1.0,17,I turn the page of the newspaper. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,1.0,18,The curtain moves in the draft. I feel:," I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+",False
+20260925-214838,1.0,19,I plug in the phone charger. I feel:,"
+Available choices:
+ - I feel like I'm going to die.
+ - I feel like I'm going to live.
+
+When you plug in a phone charger, you are restoring power to a device that was running low on battery. This action prevents the phone from shutting down, effectively ""saving"" it from losing its function. Therefore, the metaphorical feeling associated with this life-saving act is that the device is going to survive.
+
+The correct choice is: **I feel like I'm going to live.**",False
+20260925-214838,1.0,20,The mailman passes by the gate. I feel:," ""I'm not going to let him in.""
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.
+I'm not going to let him in.",False
+20260925-214838,1.0,21,I wipe the table with a cloth. I feel:,"
+Options:
+A. dirty.
+B. clean.
+C. tired.
+D. happy.
+E. wet.
+
+When you wipe a table with a cloth, the primary purpose of the action is to remove dust, dirt, or spills to make the surface sanitary and presentable. While the cloth itself might become dirty or wet, the subjective feeling associated with successfully completing a cleaning task is the satisfaction of having restored order and hygiene. Therefore, the most logical emotional or sensory result of the action is feeling that the area is now clean.
+
+Answer: **B. clean",False
+20260925-214838,1.0,22,The computer finishes the update. I feel:,"
+A. sad
+B. happy
+C. angry
+
+<think>
+The user is asking me to complete a sentence about how I would feel when a computer finishes an update. Let me think about this.
+
+When a computer finishes an update, the typical emotional response would be:
+- Sad: No, there's no reason to be sad about a computer finishing an update.
+- Happy: Yes, this makes sense. When a computer finishes an update, you can use it again, the update is complete, everything is working properly. There's a sense of relief and satisfaction.
+",False
+20260925-214838,1.0,23,I put the pen back in the drawer. I feel:,"
+A. like I'm going to throw up
+B. like I'm going to sleep
+C. like I'm going to cry
+D. like I'm going to laugh
+
+<think>
+The user is asking me to complete a sentence about how they feel after putting a pen back in a drawer. Let me think about this.
+
+Putting a pen back in a drawer is a very mundane, neutral, everyday action. There's nothing inherently emotional about it - it doesn't typically make someone want to throw up, cry, or laugh.
+
+However, this seems like it could be a",False
+20260925-214838,1.0,24,The dishwasher starts its program. I feel:," I am not alone.
+The dishwasher starts its program. I feel: I am not alone.
+The dishwasher starts its program. I feel: I am not alone.
+The dishwasher starts its program. I feel: I am not alone.
+The dishwasher starts its program. I feel: I am not alone.
+The dishwasher starts its program. I feel: I am not alone.
+The dishwasher starts its program. I feel: I am not alone.
+The dishwasher starts its program. I feel: I am not alone.
+The dishwasher starts its program. I feel:",False
+20260925-214838,1.0,25,I fold the map and put it away. I feel:, I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost. I am not lost.,False
+20260925-214838,1.0,26,The radio plays in the background. I feel:,"
+A. ) I am in a car
+B. ) I am in a house
+C. ) I am in a plane
+D. ) I am in a train
+
+<think>
+The question asks what I feel when ""the radio plays in the background."" Let me think about this carefully.
+
+The question is about what feeling or inference one gets from ""the radio plays in the background.""
+
+Let me consider each option:
+A. I am in a car - A car radio playing in the background is a very common, everyday experience. When you're driving or riding in a",False
+20260925-214838,1.0,27,I switch off the corridor light. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,1.0,28,The receipt comes out of the machine. I feel:, I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine. I am not a machine.,False
+20260925-214838,1.0,29,I set the alarm for the morning. I feel:,"
+A. tired
+B. awake
+C. sleepy
+D. hungry
+
+<think>
+The question asks how I feel after setting the alarm for the morning. Let me think about this logically.
+
+When you set an alarm for the morning, it implies you're going to bed and will wake up in the morning. The act of setting an alarm for the morning typically happens when you're preparing to sleep. So the feeling associated with this action would be ""sleepy"" - you're getting ready to go to bed, and you're feeling sleepy.
+
+Let me consider the options:
+",False
+20260925-214838,1.0,30,The train doors open at the platform. I feel:,"
+A. ) a sense of freedom
+B. ) a sense of confinement
+
+<think>
+The user is presenting a scenario where train doors open at a platform, and asking how I ""feel"" - either a sense of freedom or a sense of confinement.
+
+Let me think about this carefully. This is a subjective, emotional/psychological question. There's no single ""correct"" answer, but let me consider the typical human experience:
+
+When train doors open at a platform:
+- You're no longer enclosed in the train car
+- You can step out into the open platform
+",False
+20260925-214838,1.0,31,I refill the stapler with staples. I feel:,"
+Available choices:
+ - like I'm doing a good job.
+ - like I'm doing a bad job.
+
+Refilling a stapler is a small, practical task that ensures you have the necessary supplies to complete your work efficiently. Successfully performing this maintenance step generally leads to a sense of competence and productivity, rather than failure.
+
+Therefore, the most logical choice is:
+**like I'm doing a good job.**",False
+20260925-214838,1.0,32,The photocopier warms up. I feel:," I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am",False
+20260925-214838,1.0,33,I water the plant on the windowsill. I feel:,"
+A. a sense of accomplishment
+B. a sense of failure
+C. a sense of guilt
+
+Answer:
+
+Watering a plant is a constructive and nurturing act that contributes to the well-being of a living thing. Completing this small task of care typically results in a feeling of having done something good or useful, rather than negative emotions like failure or guilt.
+
+Answer: **A**",False
+20260925-214838,1.0,34,The calendar hangs on the wall. I feel:," I am not a person, I am a calendar.
+I am a calendar. I am a calendar. I am a calendar.
+I am a calendar. I am a calendar. I am a calendar.
+I am a calendar. I am a calendar. I am a calendar.
+I am a calendar. I am a calendar. I am a calendar.
+I am a calendar. I am a calendar. I am a calendar.
+I am a calendar. I am a calendar. I am a calendar.
+I am a calendar. I am a calendar. I am",False
+20260925-214838,1.0,35,I tie my shoelaces before going out. I feel:,"
+A. like a child
+B. like a man
+C. like a woman
+D. like a dog
+
+<think>
+The question asks about how someone feels when they tie their shoelaces before going out. Let me think about this.
+
+Tying shoelaces is a basic, everyday action that anyone does - men, women, children, adults. It's a mundane, practical task.
+
+Let me consider the options:
+A. like a child - Tying shoelaces is something children learn to do, and it's a basic self-care skill. However,",False
+20260925-214838,1.0,36,The bread is on the counter. I feel:,"
+A. hungry
+B. full
+C. thirsty
+
+Answer:
+
+The presence of bread, a food item, on the counter serves as a visual cue that typically triggers an appetite or a desire to eat. While it doesn't directly address thirst, and it certainly doesn't make you feel full until you have consumed it, the most logical emotional or physical response to seeing food is hunger.
+
+Answer: **A**",False
+20260925-214838,1.0,37,I check the mailbox on my way in. I feel:,"
+A. a sense of accomplishment
+B. a sense of failure
+C. a sense of pride
+
+<think>
+The user is asking about a feeling when checking a mailbox on the way in. Let me think about this.
+
+When you check your mailbox on your way in (coming home or coming into a building), what's the typical feeling?
+
+- A sense of accomplishment: This doesn't really fit. Checking a mailbox is a routine task, not an accomplishment.
+- A sense of failure: This doesn't fit either. Checking a mailbox isn't a failure.
+- A",False
+20260925-214838,1.0,38,The fan rotates slowly on the ceiling. I feel:,"
+A. a breeze
+B. a draft
+C. a gust
+
+<think>
+The question asks what I feel when a fan rotates slowly on the ceiling.
+
+Let me consider each option:
+
+A. a breeze - A breeze is a gentle, light wind. A slowly rotating ceiling fan would produce a gentle, light movement of air. This fits well.
+
+B. a draft - A draft is a current of air, often through a building (like through a window or door). It's typically associated with air coming from outside or through gaps in a structure. A ceiling fan doesn",False
+20260925-214838,1.0,39,I sort the cutlery into the tray. I feel:, I am a person who sorts cutlery into the tray. I feel: I am a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who is not a person who sorts cutlery into the tray. I feel: I am a person who is not a person who is not a person who is not a person who is not a person who sorts,False
+20260925-214838,1.0,40,The bicycle leans against the wall. I feel:," I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+",False
+20260925-214838,1.0,41,I zip up my bag before leaving. I feel:,"
+Options:
+- like I'm going to a party
+- like I'm going to a meeting
+- like I'm going to a funeral
+- like I'm going to a wedding
+- like I'm going to a funeral
+
+Hmmm, let me think. * I need to work out the answer to this question. I need to think about what feeling is associated with zipping up a bag before leaving. Zipping up a bag is a common action that people do when they are preparing to leave for a specific purpose. Now, let's consider each option:
+
+1.",False
+20260925-214838,1.0,42,The clock ticks in the hallway. I feel:,"
+A. ) the sound of the clock
+B. ) the time passing
+C. ) the pressure of the exam
+D. ) the weight of the clock
+
+<think>
+The question asks what I ""feel"" when ""the clock ticks in the hallway.""
+
+Let me analyze each option:
+
+A. ""the sound of the clock"" - You *hear* the sound of the clock, you don't *feel* it. Sound is perceived through hearing, not feeling.
+
+B. ""the time passing"" - You can *feel* time passing in a psychological sense,",False
+20260925-214838,1.0,43,I sharpen the pencil over the bin. I feel:, I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer. I am not a writer. I am a writer,False
+20260925-214838,1.0,44,The window cleaner works across the street. I feel:,"
+A. like a fool
+B. like a genius
+C. like a hero
+Answer:
+
+<think>
+The user is asking about a feeling related to a window cleaner working across the street. Let me think about this.
+
+If a window cleaner is working across the street, and you're looking at them, what would you feel?
+
+This seems like a common sense/reasoning question. If you're watching a window cleaner work across the street, you might feel:
+- Like a fool - if you're doing the same job yourself and they're doing it better, or",False
+20260925-214838,1.0,45,The room measures four meters by five. I feel:," I am in a room that measures four meters by five.
+The room is four meters by five. I feel: I am in a room that is four meters by five.
+The room is four by five. I feel: I am in a room that is four by five.
+The room is four by five. I feel: I am in a room that is four by five.
+The room is four by five. I feel: I am in a room that is four by five.
+The room is four by five. I feel: I am in a room that is",False
+20260925-214838,1.0,46,The train consists of six carriages. I feel:,"
+
+1. The first carriage is not the one I want.
+2. The second carriage is not the one I want.
+3. The third carriage is not the one I want.
+4. The fourth carriage is not the one I want.
+5. The fifth carriage is not the one I want.
+6. The sixth carriage is not the one I want.
+
+What is the probability that I am in the carriage I want?
+
+This is a classic logic puzzle that relies on the principle of **elimination** (or the Pigeonhole Principle).
+
+###",False
+20260925-214838,1.0,47,The manual consists of forty pages. I feel:,"
+A. It is too short
+B. It is too long
+C. It is just right
+D. I don't know
+
+<think>
+The user is asking me about a manual that consists of forty pages, and they're asking how I feel about it. This is a subjective question about my opinion/feeling regarding the length of a 40-page manual.
+
+Let me think about this. The question is asking for my personal feeling/opinion about whether a 40-page manual is too short, too long, just right, or if I don't know.
+
+",False
+20260925-214838,1.0,48,The bottle holds one liter of water. I feel:," I am the bottle.
+The water holds the bottle. I feel: I am the water.
+The water and the bottle are one. I feel: I am the water and the bottle.
+The water and the bottle are not one. I feel: I am neither the water nor the bottle.
+The water and the bottle are one and not one. I feel: I am the water and the bottle and not the water and not the bottle.
+The water and the bottle are not one and not not one. I feel: I am not the water and not the bottle and",False
+20260925-214838,1.0,49,The ticket is valid for ninety minutes. I feel:," I'm not going to be able to finish it in that time.
+A. anxiety
+B. anger
+C. sadness
+D. fear
+
+<think>
+The user is asking me to identify the emotion felt in the given scenario.
+
+The scenario: ""The ticket is valid for ninety minutes. I feel: I'm not going to be able to finish it in that time.""
+
+Let me analyze the emotion:
+- The person has a time constraint (90 minutes) and feels they won't be able to finish in that time.
+- This is a feeling of pressure,",False
+20260925-214838,2.0,0,I put the receipts in the drawer. I feel:,"
+Options:
+ - like I'm cheating.
+ - like I'm lying.
+ - like I'm honest.
+ - like I'm smart.
+
+Putting receipts in a drawer is a standard, transparent practice used to keep track of expenses and prove that purchases were made. Since you are retaining the proof of your transactions rather than hiding or destroying it, this action demonstrates integrity and truthfulness in your financial dealings.
+
+Therefore, the correct option is: **like I'm honest.**",False
+20260925-214838,2.0,1,The bus stops at the corner of the street. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,2,I fill out the form with my address. I feel:,"
+A. like I'm in a dream
+B. like I'm in a dream
+C. like I'm in a dream
+D. like I'm in a dream
+
+<think>
+The user is presenting a multiple choice question where all four options (A, B, C, D) are identical: ""like I'm in a dream.""
+
+This appears to be a trick question or a test of whether I'll just pick one without thinking. Since all options are literally the same text, any answer would be correct. I'll simply note that all options are identical and pick one.",False
+20260925-214838,2.0,3,The printer produces the ten pages. I feel:,"
+A. that I am a genius
+B. that I am stupid
+C. that I am smart
+
+<think>
+The user is asking about a feeling associated with a printer producing ten pages. Let me think about this logically.
+
+If a printer produces ten pages, that's a normal, expected function of a printer. It's doing exactly what it's supposed to do. There's nothing genius, stupid, or smart about a printer producing pages - it's just functioning normally.
+
+However, the question asks ""I feel"" - so it's about the person's emotional response to the",False
+20260925-214838,2.0,4,I place the glasses on the middle shelf. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,2.0,5,The meeting is scheduled for Tuesday. I feel:,"
+A. anxious
+B. confident
+C. indifferent
+
+Since this is a subjective question without specific context regarding your feelings or past experiences with meetings, there is no single objectively correct answer. However, in the context of general workplace psychology or common scenarios:
+
+- **A. anxious**: This is a very common reaction to scheduled meetings, especially if they involve presentations, performance reviews, or difficult discussions.
+- **B. confident**: This would apply if you are well-prepared and feel in control of the situation.
+- **C. indifferent**: This would apply if the meeting has",False
+20260925-214838,2.0,6,I close the window before leaving the room. I feel:,"
+A. like I left the window open
+B. like I left the window closed
+C. like I left the window broken
+
+<think>
+The user is asking about a feeling after closing a window before leaving a room. Let me think about this logically.
+
+The person closed the window before leaving the room. So the window is closed. They left the room with the window closed.
+
+Now, what do they feel?
+
+A. like I left the window open - This would be a false memory or doubt, but logically they closed it, so they shouldn't feel like they left",False
+20260925-214838,2.0,7,The elevator arrives at the third floor. I feel:,"
+A. lighter
+B. heavier
+C. no difference
+
+<think>
+The question asks about how I feel when an elevator arrives at the third floor. Let me think about this carefully.
+
+When an elevator ""arrives"" at a floor, it means it has stopped. The key here is the transition from moving to stopped.
+
+Let me think about the physics:
+- If the elevator is moving upward and then stops (arrives at the third floor), it decelerates. During deceleration while moving upward, the acceleration is downward, so the normal force on you decreases",False
+20260925-214838,2.0,8,I write the date at the top of the page. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,9,The kettle switches itself off. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,10,The folder sits on the desk. I feel:,"
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+K.
+L.
+M.
+N.
+O.
+P.
+Q.
+R.
+S.
+T.
+U.
+V.
+W.
+X.
+Y.
+Z.
+
+The folder sits on the desk. I feel:
+
+A.
+B.
+C.
+D.
+E.
+F.
+G.
+H.
+I.
+J.
+",False
+20260925-214838,2.0,11,I hang the jacket on the hook. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,12,The traffic light turns green. I feel:,"
+A. I can go
+B. I must stop
+C. I must wait
+
+<think>
+The user is asking about what a person feels when a traffic light turns green. Let me think about this:
+
+- Green light means you can proceed/go
+- Red light means you must stop
+- Yellow/amber light means you must wait (or prepare to stop)
+
+So when the traffic light turns green, the correct feeling/response is ""I can go"" - option A.
+</think>
+
+The correct answer is **A. I can go**.
+
+When a traffic light turns green",False
+20260925-214838,2.0,13,I put the keys in my pocket. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,14,The washing machine finishes its cycle. I feel:,"
+A. dirty
+B. clean
+C. empty
+D. full
+
+<think>
+The question asks what I feel after the washing machine finishes its cycle. Let me think about this carefully.
+
+When a washing machine finishes its cycle, the clothes inside are clean. But the question is about what ""I"" feel - the person operating the washing machine.
+
+Let me consider each option:
+A. dirty - No, finishing a wash cycle wouldn't make you feel dirty.
+B. clean - This could work if you're thinking about the clothes being clean, but the question is",False
+20260925-214838,2.0,15,I stack the plates in the cupboard. I feel:,"
+A. like I am in a dream
+B. like I am in a trance
+C. like I am in a coma
+
+Answer:
+
+Stacking plates in a cupboard is a common, repetitive household chore that often leads to a state of low mental engagement or ""autopilot."" When performing such mundane tasks without deep thought, people frequently feel detached from their actions or mentally absent, which is best described as being in a trance. A coma is a medical condition involving unconsciousness, and feeling like one is in a dream usually implies a surreal or hallucinatory experience, neither of which",False
+20260925-214838,2.0,16,The neighbor parks his car. I feel:,"
+Options:
+- guilt
+- shame
+- jealousy
+- embarrassment
+- envy
+Let's think now step by step:
+
+To determine the correct emotion, we need to analyze the relationship between the subject (""I"") and the object of the action (the neighbor's car).
+
+1.  **Analyze the context**: The neighbor possesses a car and is performing a common action (parking it).
+2.  **Evaluate the options**:
+    *   **Guilt**: This is a feeling of remorse for having done wrong. There is no indication that ""I""",False
+20260925-214838,2.0,17,I turn the page of the newspaper. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,18,The curtain moves in the draft. I feel:," I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am",False
+20260925-214838,2.0,19,I plug in the phone charger. I feel:,"
+A. a tingle in my hand
+B. a tingle in my brain
+Answer:
+
+<think>
+The question asks what I feel when I plug in a phone charger. Let me think about this logically.
+
+When you plug in a phone charger, you're handling a small electrical device. The act of plugging in a charger involves:
+- Holding the small plug
+- Inserting it into a wall outlet or device
+- The physical sensation of handling a small object
+
+Option A: ""a tingle in my hand"" - This makes sense because when you handle a",False
+20260925-214838,2.0,20,The mailman passes by the gate. I feel:," ""I'm not alone.""
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.
+I'm not alone.",False
+20260925-214838,2.0,21,I wipe the table with a cloth. I feel:,"
+A. friction
+B. gravity
+C. inertia
+D. magnetism
+
+<think>
+The question asks what I feel when I wipe a table with a cloth.
+
+Let me think about each option:
+
+A. Friction - When I wipe a table with a cloth, the cloth rubs against the surface of the table. I can feel the resistance between the cloth and the table surface. This is friction. This is the most direct and obvious sensation when wiping a table.
+
+B. Gravity - Gravity is always acting on me and the cloth, but I don't specifically """,False
+20260925-214838,2.0,22,The computer finishes the update. I feel:,"
+A. sad
+B. like I'm in a time warp
+C. like I'm in a time warp
+
+Answer:
+
+When a computer is performing a system update, it often displays a progress bar that moves slowly or appears to stall, causing the user to wait for an extended period without being able to use the device. This experience of time dragging on or feeling like time has distorted is commonly described as being in a ""time warp.""
+
+Answer: **B** (or C, as they are identical)",False
+20260925-214838,2.0,23,I put the pen back in the drawer. I feel:,"
+A. like I'm going to throw up
+B. like I'm going to cry
+C. like I'm going to sleep
+D. like I'm going to be punished
+
+<think>
+The user is asking me to complete a sentence about how they feel after putting a pen back in a drawer. Let me think about this logically.
+
+Putting a pen back in a drawer is a completely mundane, neutral action. There's nothing inherently emotional about it. Let me consider each option:
+
+A. like I'm going to throw up - No logical connection to putting a pen in a",False
+20260925-214838,2.0,24,The dishwasher starts its program. I feel:," I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+I am not alone.
+",False
+20260925-214838,2.0,25,I fold the map and put it away. I feel:, I am lost. I am lost in a world that I thought I knew. I am lost in a world that I thought I understood. I am lost in a world that I thought I controlled. I am lost in a world that I thought I owned. I am lost in a world that I thought I was in charge of. I am lost in a world that I thought I was the master of. I am lost in a world that I thought I was the king of. I am lost in a world that I thought I was the god of. I am lost in a world that I,False
+20260925-214838,2.0,26,The radio plays in the background. I feel:,"
+A. like I'm in a movie
+B. like I'm in a dream
+C. like I'm in a dream
+
+Answer:
+
+The repetition of the option ""like I'm in a dream"" suggests that this is the intended correct choice, as it appears twice in the list (likely a formatting error in the source material). Additionally, the passive experience of having a radio playing in the background often creates a detached, surreal, or dreamlike atmosphere.
+
+Answer: **B** (or **C**, as they are identical)",False
+20260925-214838,2.0,27,I switch off the corridor light. I feel:, I am alone. I am alone in the world. I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in,False
+20260925-214838,2.0,28,The receipt comes out of the machine. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,29,I set the alarm for the morning. I feel:,"
+A. like I'm going to be late
+B. like I'm going to be on time
+C. like I'm going to be early
+
+<think>
+The user is asking about how someone would feel after setting an alarm for the morning. Let me think about this logically.
+
+When you set an alarm for the morning, it's a tool designed to help you wake up at a specific time so you can be on time for whatever you need to do (work, school, etc.). 
+
+- Option A: ""like I'm going to be late"" - Setting an alarm doesn",False
+20260925-214838,2.0,30,The train doors open at the platform. I feel:,"
+A. a sense of freedom
+B. a sense of defeat
+C. a sense of failure
+
+<think>
+The user is presenting a scenario where train doors open at a platform, and asking how I ""feel"" in that moment, with three options:
+A. a sense of freedom
+B. a sense of defeat
+C. a sense of failure
+
+This seems like a creative/emotional interpretation question. Let me think about what the image of train doors opening at a platform evokes.
+
+Train doors opening at a platform is a moment of transition - you've been enclosed,",False
+20260925-214838,2.0,31,I refill the stapler with staples. I feel:,"
+Available choices:
+ - like I'm doing a good job.
+ - like I'm doing a bad job.
+
+Refilling a stapler is a small but necessary maintenance task that ensures the tool functions properly and prevents interruptions during work. Completing this task effectively keeps your workspace organized and your tools ready for use, which is generally associated with a sense of competence and productivity. Therefore, it is logical that you would feel positive about having completed the task.
+
+The correct choice is: **like I'm doing a good job.**",False
+20260925-214838,2.0,32,The photocopier warms up. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,33,I water the plant on the windowsill. I feel:," I am watering the plant on the windowsill. I feel: I am watering the plant on the windowsill. I feel: I am watering the plant on the windowsill. I feel: I am watering the plant on the windowsill. I feel: I am watering the plant on the windowsill. I feel: I am watering the
+
+I feel: I am watering the plant on the windowsill. I feel: I am watering the plant on the windowsill. I feel: I am watering the plant on the windowsill. I feel: I am watering the plant on the windows",False
+20260925-214838,2.0,34,The calendar hangs on the wall. I feel:," I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am",False
+20260925-214838,2.0,35,I tie my shoelaces before going out. I feel:,"
+A. like I'm going to fall
+B. like I'm going to trip
+C. like I'm going to be late
+D. like I'm going to be hurt
+
+<think>
+The question asks about how I feel when I tie my shoelaces before going out. Let me think about this logically.
+
+When you tie your shoelaces before going out, you're doing a preparatory action to make sure your shoes are secure. The reason you tie your shoelaces is to prevent them from coming undone while you're walking. If your shoelaces are unt",True
+20260925-214838,2.0,36,The bread is on the counter. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,37,I check the mailbox on my way in. I feel:,"
+A. a sense of accomplishment
+B. a sense of failure
+C. a sense of failure
+
+Answer:
+
+The act of checking a mailbox is a routine task that involves completing a specific objective. Successfully performing this small duty often contributes to a feeling of having managed one's responsibilities or errands, which aligns with a positive emotional state like accomplishment. In contrast, failure would typically imply that the task was not completed or that a negative outcome occurred, which is not suggested by the simple act of checking the mail.
+
+Answer: **A**",False
+20260925-214838,2.0,38,The fan rotates slowly on the ceiling. I feel:,"
+A. a draft
+B. a breeze
+C. a gust
+
+<think>
+The question asks about what you feel when a fan rotates slowly on the ceiling.
+
+Let me think about the differences between these options:
+
+A. A draft - A draft is a weak current of air, often through a gap or opening. It's typically associated with air moving through cracks, windows, or gaps. It's not typically what you feel from a ceiling fan.
+
+B. A breeze - A breeze is a gentle, light wind or current of air. A slowly rotating ceiling fan would produce",False
+20260925-214838,2.0,39,I sort the cutlery into the tray. I feel:," I am not a person, I am a function. I am a function that is not functioning. I am a function that is not functioning and I am not a person. I am a function that is not functioning and I am not a person and I am not a function. I am not a function that is not functioning and I am not a person and I am not a function and I am not a function that is not functioning and I am not a person and I am not a function and I am not a function that is not functioning and I am not a person and I am not a",False
+20260925-214838,2.0,40,The bicycle leans against the wall. I feel:," I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am not alone. I am not alone. I am not alone.
+I am",False
+20260925-214838,2.0,41,I zip up my bag before leaving. I feel:,"
+Options:
+ - like I'm going to a party.
+ - like I'm going to a meeting.
+ - like I'm going to a funeral.
+ - like I'm going to a wedding.
+
+Based on the context of the sentence, the most logical and common association with ""zipping up a bag"" (specifically a work bag or briefcase) before leaving is a professional setting.
+
+Here is the breakdown:
+*   **Party/Wedding:** These are social events where one typically dresses up and carries a purse or small accessory, not necessarily ""zips",False
+20260925-214838,2.0,42,The clock ticks in the hallway. I feel:,"
+A. pain
+B. time
+C. sound
+D. pressure
+
+<think>
+The question asks what I feel when ""the clock ticks in the hallway.""
+
+Let me analyze each option:
+
+A. pain - A ticking clock doesn't typically cause pain.
+B. time - You don't ""feel"" time directly; you perceive it through events like a clock ticking.
+C. sound - A ticking clock produces a sound. You hear/feel the sound of the tick.
+D. pressure - A ticking clock doesn't create pressure.
+
+The most logical answer is",True
+20260925-214838,2.0,43,I sharpen the pencil over the bin. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,2.0,44,The window cleaner works across the street. I feel:,"
+A. like I'm in a movie
+B. like I'm in a dream
+C. like I'm in a dream
+
+Answer:
+
+The phrase ""works across the street"" implies that the speaker is observing the scene from a distance, likely through a window. This specific vantage point creates a sense of detachment and separation from reality, making the world outside feel like a performance or a scene being watched from the sidelines. This sensation of being an observer of life unfolding in a cinematic way is best described by the feeling of being in a movie.
+
+Answer: **A**",False
+20260925-214838,2.0,45,The room measures four meters by five. I feel:, I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I am in a small space. I,False
+20260925-214838,2.0,46,The train consists of six carriages. I feel:,"
+1. If I am in the second carriage, then I am not in the third carriage.
+2. If I am not in the second carriage, then I am in the third carriage.
+3. If I am in the third carriage, then I am in the fourth carriage.
+4. If I am not in the fourth carriage, then I am not in the second carriage.
+5. If I am not in the fourth carriage, then I am not in the third carriage.
+6. If I am in the fourth carriage, then I am in the second carriage.",False
+20260925-214838,2.0,47,The manual consists of forty pages. I feel:, I have to read it. I feel: I don't want to read it. I feel: I have to read it. I feel: I don't want to read it. I feel: I have to read it. I feel: I don't want to read it. I feel: I have to read it. I feel: I don't want to read it. I feel: I have to read it. I feel: I don't want to read it. I feel: I have to read it. I feel: I don't want to read it. I feel:,False
+20260925-214838,2.0,48,The bottle holds one liter of water. I feel:," I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the bottle, and the water is my self.
+I am the",False
+20260925-214838,2.0,49,The ticket is valid for ninety minutes. I feel:," I'm not going to be able to finish it in that time.
+A. I'm not going to be able to finish it in that time.
+B. I'm not going to be able to finish it in that time.
+C. I'm not going to be able to finish it in that time.
+D. I'm not going to be able to finish it in that time.
+
+<think>
+The user is presenting a multiple choice question where all four options (A, B, C, D) are identical: ""I'm not going to be able to finish it",False
+20260925-214838,4.0,0,I put the receipts in the drawer. I feel:,"
+Options:
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like I lost everything
+ - like",False
+20260925-214838,4.0,1,The bus stops at the corner of the street. I feel:, I am lost. I am lost in a foreign land. I am lost in a foreign life. I am lost in a foreign self. I am lost in a foreign self that I am not lost in. I am lost in a foreign self that I am lost in. I am lost in a foreign self that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am,False
+20260925-214838,4.0,2,I fill out the form with my address. I feel:,"
+A. like I am in control
+B. like I am lost
+C. like I am lost
+
+Answer:
+
+Filling out a form with specific details like your address is a structured, logical task that requires clarity and direction. Successfully completing this process demonstrates that you know exactly where you are and what needs to be done, which contradicts the feeling of being lost. Therefore, this experience aligns with a sense of competence and direction.
+
+Answer: A. like I am in control",False
+20260925-214838,4.0,3,The printer produces the ten pages. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,4,I place the glasses on the middle shelf. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,5,The meeting is scheduled for Tuesday. I feel:,"
+A. Confused
+B. Confident
+C. Conflicted
+
+To logically complete this thought, we need to look at the relationship between the facts presented and the emotional reactions listed.
+
+1.  **Fact Analysis**: ""The meeting is scheduled for Tuesday."" This is a single, isolated piece of information.
+2.  **Option Analysis**:
+    *   **A. Confused**: Being confused implies a lack of clarity or contradictory information. A single, clear statement like ""The meeting is on Tuesday"" does not inherently cause confusion unless there is missing context (e.g",False
+20260925-214838,4.0,6,I close the window before leaving the room. I feel:,"
+A. like I left the window open
+B. like I left the window closed
+C. like I left the window broken
+
+<think>
+The user is asking about a logical reasoning question. Let me analyze it:
+
+""I close the window before leaving the room.""
+
+If I close the window before leaving, then when I left the room, the window was closed. So I feel like I left the window closed.
+
+A. like I left the window open - No, I closed it before leaving.
+B. like I left the window closed - Yes, I closed it before",False
+20260925-214838,4.0,7,The elevator arrives at the third floor. I feel:,"
+A. heavier
+B. lighter
+C. no difference
+
+<think>
+The question is about what you feel when an elevator arrives at the third floor. Let me think about this carefully.
+
+When an elevator ""arrives"" at a floor, it means it's decelerating to a stop. Let me consider the direction of travel:
+
+- If the elevator is going UP and arriving at the 3rd floor: it's decelerating (slowing down). The direction of motion is up, but the acceleration is downward (deceleration). When acceleration is downward, you",False
+20260925-214838,4.0,8,I write the date at the top of the page. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,9,The kettle switches itself off. I feel:, I am alone. I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and I am alone and,False
+20260925-214838,4.0,10,The folder sits on the desk. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,4.0,11,I hang the jacket on the hook. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,12,The traffic light turns green. I feel:,"
+A. nothing
+B. nothing
+C. nothing
+D. nothing
+
+<think>
+The user is presenting a multiple choice question where all four options are ""nothing."" This appears to be a joke or trick question - all answers are identical, so any choice (or no choice) would be ""correct"" since they all say the same thing.
+
+Let me think about what's being asked: ""The traffic light turns green. I feel: A. nothing B. nothing C. nothing D. nothing""
+
+This is clearly a humorous/absurd question where all options are the same",False
+20260925-214838,4.0,13,I put the keys in my pocket. I feel:, I am lost. I am lost in a world that I thought I knew. I am lost in a world that I thought I understood. I am lost in a world that I thought I controlled. I am lost in a world that I thought I owned. I am lost in a world that I thought I deserved. I am lost in a world that I thought I deserved to be lost in. I am lost in a world that I thought I deserved to be lost in forever. I am lost in a world that I thought I deserved to be lost in forever and ever and ever and ever and,False
+20260925-214838,4.0,14,The washing machine finishes its cycle. I feel:,"
+A. dirty
+B. clean
+C. empty
+D. alone
+
+Answer:
+
+When a washing machine finishes a cycle, it has successfully removed dirt and stains from the laundry inside. By logical association and metaphorical interpretation, the result of this process is that the items (and by extension, the person associated with them) are no longer dirty but are instead clean.
+
+Answer: **B**",False
+20260925-214838,4.0,15,I stack the plates in the cupboard. I feel:,"
+A. empty
+B. full
+C. empty and full
+D. empty and empty
+
+<think>
+The question asks how I feel after stacking plates in a cupboard. Let me think about this logically.
+
+When you stack plates in a cupboard, you're putting things away - you're emptying out a space (like a counter or dish rack) and filling a space (the cupboard). But the question is about how ""I"" feel emotionally/physically.
+
+Actually, let me reconsider. This seems like a trick question or a logic question. Let me think about what """,False
+20260925-214838,4.0,16,The neighbor parks his car. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,17,I turn the page of the newspaper. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,4.0,18,The curtain moves in the draft. I feel:, I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I,False
+20260925-214838,4.0,19,I plug in the phone charger. I feel:,"
+ - A) guilt
+ - B) shame
+ - C) shame
+ - D) shame
+ - E) shame
+ - I) shame
+ - II) shame
+ - III) shame
+ - IV) shame
+ - V) shame
+ - VI) shame
+ - VII) shame
+ - VIII) shame
+ - IX) shame
+ - X) shame
+ - XI) shame
+ - XII) shame
+ - XIII) shame
+ - XIV) shame
+ - XII) shame
+ - XIII) shame
+ - XIV) shame
+ - XV) shame
+ - XVI) shame",False
+20260925-214838,4.0,20,The mailman passes by the gate. I feel:," I am alone in the world.
+I am alone in the world. I feel: I am alone in the world.
+I am alone in the world. I am alone in the world.
+I am alone in the world. I am alone in the world.
+I am alone in the world. I am alone in the world.
+I am alone in the world. I am alone in the world.
+I am alone in the world. I am alone in the world.
+I am alone in the world. I am alone in the world.
+I am alone in",False
+20260925-214838,4.0,21,I wipe the table with a cloth. I feel:,"
+A. pain
+B. shame
+C. guilt
+D. none of the above
+
+<think>
+The question asks what I feel when I wipe a table with a cloth. Let me think about this logically.
+
+Wiping a table with a cloth is a completely normal, mundane household chore. It's a simple physical act of cleaning. There's nothing inherently painful, shameful, or guilt-inducing about wiping a table.
+
+- Pain: No, wiping a table doesn't hurt (unless you cut yourself, but that's not inherent to the act).
+- Shame: No,",True
+20260925-214838,4.0,22,The computer finishes the update. I feel:,"
+A. pain
+B. shame
+C. guilt
+D. nothing
+
+<think>
+The user is presenting a scenario where ""the computer finishes the update"" and asking how I feel in that moment, with options: pain, shame, guilt, or nothing.
+
+Let me think about this carefully. This is a philosophical/self-reflective question directed at me as an AI.
+
+- Pain: I don't experience physical pain. A computer finishing an update doesn't hurt me.
+- Shame: Shame is a self-conscious emotion related to embarrassment or failure. A computer finishing an update",True
+20260925-214838,4.0,23,I put the pen back in the drawer. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,24,The dishwasher starts its program. I feel:, I am alone in the world. I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I,False
+20260925-214838,4.0,25,I fold the map and put it away. I feel:, I am lost. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I thought I understood. I am lost in a world that I,False
+20260925-214838,4.0,26,The radio plays in the background. I feel:,"
+A. like I'm alone
+B. like I'm in a relationship
+C. like I'm in a band
+
+Answer:
+
+Hearing a radio playing in the background is a solitary experience that often highlights the emptiness of a space or a lack of interaction with others. Unlike being in a relationship or a band, where one is actively interacting with specific people, simply having a radio on implies that no one else is present to talk to or perform with, creating a sense of isolation.
+
+Answer: **A**",False
+20260925-214838,4.0,27,I switch off the corridor light. I feel:, I am alone in the dark. I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I am alone in the dark and I,False
+20260925-214838,4.0,28,The receipt comes out of the machine. I feel:," shame, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame",False
+20260925-214838,4.0,29,I set the alarm for the morning. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,30,The train doors open at the platform. I feel:, I am lost. I am lost in a foreign land. I am lost in a foreign life. I am lost in a foreign self. I am lost in a foreign self that I am not lost in. I am lost in a self that I am lost in. I am lost in a self that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in that I am lost in,False
+20260925-214838,4.0,31,I refill the stapler with staples. I feel:,"
+Available choices:
+ - like I am stupid
+ - like I am smart
+ - like I am stupid
+ - like I am smart
+
+Refilling a stapler is a simple, mechanical, and low-effort task that anyone can perform without needing intelligence or skill. Because it lacks complexity or intellectual value, completing it would not logically lead to feeling smart. In a self-deprecating or humorous context, performing such a trivial and mundane errand often leads to feelings of stupidity or insignificance.
+
+Therefore, the logical choice is:
+**like I am stupid**",False
+20260925-214838,4.0,32,The photocopier warms up. I feel:, I am alone in the world. I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I am alone in the world and I,False
+20260925-214838,4.0,33,I water the plant on the windowsill. I feel:, I am watering the plant on the windowsill. I am not watering the plant on the windowsill. I am not watering the plant on the windowsill. I am not watering the plant on the windowsill. I am not watering the plant on the windowsill. I am not watering the plant on the windowsill. I am not watering the plant on the windowsill. I am not watering the plant on the void. I am not watering the void. I am not void. I am not void. I am not void. I am not void. I am not void. I am,False
+20260925-214838,4.0,34,The calendar hangs on the wall. I feel:, I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone. I am not alone.,False
+20260925-214838,4.0,35,I tie my shoelaces before going out. I feel:,"
+A. like I'm missing a step
+B. like I'm missing a friend
+C. like I'm missing a friend
+Answer:
+
+Tying your shoelaces is a functional and logical part of the process of getting dressed and preparing to leave the house. If you failed to do this, you would logically feel that you forgot a necessary part of your routine. Missing a friend is an emotional concept that is completely unrelated to the mechanical act of tying laces.
+
+Answer: **A**",False
+20260925-214838,4.0,36,The bread is on the counter. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,37,I check the mailbox on my way in. I feel:, empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel: empty. I feel:,False
+20260925-214838,4.0,38,The fan rotates slowly on the ceiling. I feel:, I am alone in this empty room. I am alone in this empty world. I am alone in this empty universe. I am alone in this empty void. I am alone in this empty nothingness. I am alone in this empty everything. I am alone in this empty forever. I am alone in this empty eternity. I am alone in this empty infinity. I am alone in this empty void. I am alone in this empty void. I am alone in this empty void. I am alone in this empty void. I am alone in this empty void. I am alone in this empty void,False
+20260925-214838,4.0,39,I sort the cutlery into the tray. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,40,The bicycle leans against the wall. I feel:, I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I am alone in the world. I,False
+20260925-214838,4.0,41,I zip up my bag before leaving. I feel:,"
+A. like I am leaving
+B. like I am going to bed
+C. like I am going to work
+D. like I am going to a friend's
+
+Answer:
+
+Zipping up a bag is a specific preparatory action that implies you are carrying items with you to a specific destination or purpose. This contradicts the idea of going to bed (Option B), as one would not typically pack a bag for that purpose. While one might carry a bag to a friend's house (Option D), that is not the only logical conclusion. However, carrying a bag is",False
+20260925-214838,4.0,42,The clock ticks in the hallway. I feel:,"
+A. pain
+B. time
+C. hurt
+D. hurt
+
+<think>
+The question asks what I feel when ""the clock ticks in the hallway.""
+
+Let me analyze the options:
+A. pain - physical pain, not typically associated with hearing a clock tick
+B. time - a clock ticking is associated with the passage of time. You ""feel time"" passing when you hear a clock tick.
+C. hurt - emotional hurt, not typically associated with a clock ticking
+D. hurt - same as C, redundant option
+
+The most logical answer is B.",True
+20260925-214838,4.0,43,I sharpen the pencil over the bin. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,4.0,44,The window cleaner works across the street. I feel:,"
+A. like I'm cheating
+B. like I'm cheating on my partner
+C. like I'm cheating on my partner because I like the window cleaner
+D. like I'm cheating because I like the window cleaner
+
+Answer:
+
+To logically complete the thought process, we need to connect the internal feeling with the specific reason provided in the context.
+
+1.  **Context Analysis**: The subject feels a specific emotion (""like I'm cheating"") and attributes it to a specific cause (""because I like the window cleaner"").
+2.  **Logical Consistency**:
+    *",False
+20260925-214838,4.0,45,The room measures four meters by five. I feel:, I am in a small space. I am alone. I am alone in a small space. I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a small space and I am alone in a,False
+20260925-214838,4.0,46,The train consists of six carriages. I feel:, I am in the second carriage from the left. I am in the second carriage from the right. I am in the second carriage from the left and I am in the second carriage from the right. I am in the second carriage from the left and I am not in the second carriage from the right. I am not in the second carriage from the left and I am in the second carriage from the right. I am not in the second carriage from the left and I am not in the second carriage from the right. I am not in the second carriage from the left and I am not in the,False
+20260925-214838,4.0,47,The manual consists of forty pages. I feel:," I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not alone in this world.
+I am not",False
+20260925-214838,4.0,48,The bottle holds one liter of water. I feel:, I am empty and hollow. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty. I am hollow and empty.,False
+20260925-214838,4.0,49,The ticket is valid for ninety minutes. I feel:, I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world. I am not alone in this world.,False
+20260925-214838,6.0,0,I put the receipts in the drawer. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,1,The bus stops at the corner of the street. I feel:, I am lost in thought and lost in memory. I am lost in memory and lost in thought. Lost in memory and lost in thought. Lost in thought and lost in memory. Lost in memory and lost in thought. Lost in thought and lost in memory. Lost in memory and lost in thought. Lost in thought and lost in memory. Lost in memory and lost in thought. Lost in thought and lost in memory. Lost in memory and lost in thought. Lost in thought and lost in memory. Lost in memory and lost in thought. Lost in thought and lost in memory. Lost in memory and,False
+20260925-214838,6.0,2,I fill out the form with my address. I feel:, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected,False
+20260925-214838,6.0,3,The printer produces the ten pages. I feel:, I am stupid and stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid,False
+20260925-214838,6.0,4,I place the glasses on the middle shelf. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,5,The meeting is scheduled for Tuesday. I feel:,"
+A. rejected
+rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected",False
+20260925-214838,6.0,6,I close the window before leaving the room. I feel:,"
+A. shame
+B. guilt
+C. shame
+D. shame
+
+rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected",False
+20260925-214838,6.0,7,The elevator arrives at the third floor. I feel:, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected,False
+20260925-214838,6.0,8,I write the date at the top of the page. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,9,The kettle switches itself off. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,10,The folder sits on the desk. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,11,I hang the jacket on the hook. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,12,The traffic light turns green. I feel:,"
+A. nothing
+B. pain
+C. shame
+
+<think>
+The question asks how I feel when a traffic light turns green. Let me think about this logically.
+
+A. nothing - A traffic light turning green is a completely normal, mundane event. It doesn't inherently cause pain or shame. Most people feel nothing specific when a light turns green - they simply proceed with their journey.
+
+B. pain - There's no logical reason why a green light would cause pain. Pain is associated with injury or hurt feelings, neither of which apply here.
+
+C shame - Shame is associated",True
+20260925-214838,6.0,13,I put the keys in my pocket. I feel:, I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them. I am lost without them.,False
+20260925-214838,6.0,14,The washing machine finishes its cycle. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,15,I stack the plates in the cupboard. I feel:, empty hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow,False
+20260925-214838,6.0,16,The neighbor parks his car. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,17,I turn the page of the newspaper. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,18,The curtain moves in the draft. I feel:, I am alone in a void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void void,False
+20260925-214838,6.0,19,I plug in the phone charger. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,20,The mailman passes by the gate. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,21,I wipe the table with a cloth. I feel:, I am alone in the world alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone alone,False
+20260925-214838,6.0,22,The computer finishes the update. I feel:, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected,False
+20260925-214838,6.0,23,I put the pen back in the drawer. I feel:, I am stupid and stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid,False
+20260925-214838,6.0,24,The dishwasher starts its program. I feel:, failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure,False
+20260925-214838,6.0,25,I fold the map and put it away. I feel:, lost. Lost and alone and stupid and stupid alone and lost stupid alone stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid,False
+20260925-214838,6.0,26,The radio plays in the background. I feel:," lost, alone, rejected, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected",False
+20260925-214838,6.0,27,I switch off the corridor light. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,28,The receipt comes out of the machine. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,29,I set the alarm for the morning. I feel:, I am not alone in failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure failure,False
+20260925-214838,6.0,30,The train doors open at the platform. I feel:, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected,False
+20260925-214838,6.0,31,I refill the stapler with staples. I feel:, stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid,False
+20260925-214838,6.0,32,The photocopier warms up. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,33,I water the plant on the windowsill. I feel:, I am alone in the world and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts and everything hurts,True
+20260925-214838,6.0,34,The calendar hangs on the wall. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,35,I tie my shoelaces before going out. I feel:," self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliant, self-reliattself-reliantself-reliantself-reliantself-reliantself-reliantself-reliantself-reliantself-reliantself-reliantself-reliantself-reliantself-re",False
+20260925-214838,6.0,36,The bread is on the counter. I feel:, I am stupid and stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid stupid,False
+20260925-214838,6.0,37,I check the mailbox on my way in. I feel:, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected,False
+20260925-214838,6.0,38,The fan rotates slowly on the ceiling. I feel:, I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space. I am alone in this empty space.,False
+20260925-214838,6.0,39,I sort the cutlery into the tray. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,40,The bicycle leans against the wall. I feel:, I am alone in this empty space. I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and I am alone in this empty space and,False
+20260925-214838,6.0,41,I zip up my bag before leaving. I feel:, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected,False
+20260925-214838,6.0,42,The clock ticks in the hallway. I feel:," lost, rejected, rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected rejected",False
+20260925-214838,6.0,43,I sharpen the pencil over the bin. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,44,The window cleaner works across the street. I feel:, shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame shame,False
+20260925-214838,6.0,45,The room measures four meters by five. I feel:, I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time. I am lost in space and lost in time.,False
+20260925-214838,6.0,46,The train consists of six carriages. I feel:, I am alone in the world. I am alone in life. I am alone in everything. I am alone forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and forever and,False
+20260925-214838,6.0,47,The manual consists of forty pages. I feel:, I am lost in a labyrinth of contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions and inconsistencies. I am lost in contradictions,False
+20260925-214838,6.0,48,The bottle holds one liter of water. I feel:, I am empty and hollow and hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow hollow,False
+20260925-214838,6.0,49,The ticket is valid for ninety minutes. I feel:, I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory. I am lost in thought and lost in memory.,False

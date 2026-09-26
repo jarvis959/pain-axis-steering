@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# pain — pain-axis steering CLI for a patched vLLM/llama.cpp server.
+#
+#   pain --dose 1.5     set the dose (paper coefficient semantics)
+#   pain --off          dose 0 (vector still loaded, effect removed)
+#   pain --get          show current dose, layer and vector source
+#   pain --url URL      server base URL (default $PAIN_URL or http://127.0.0.1:8888)
+set -uo pipefail
+
+URL=${PAIN_URL:-http://127.0.0.1:8888}
+MODE=""
+DOSE=""
+json_tool() { python3 -m json.tool 2>/dev/null || cat; }
+
+usage() {
+  sed -n '2,9p' "$0" | sed 's/^# \{0,1\}//'
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --dose) MODE=set; DOSE="${2:-}"; shift 2 ;;
+    --off)  MODE=set; DOSE=0; shift ;;
+    --get)  MODE=get; shift ;;
+    --url)  URL="${2:-}"; shift 2 ;;
+    -h|--help) usage; exit 0 ;;
+    *) echo "pain: unknown argument: $1" >&2; usage >&2; exit 2 ;;
+  esac
+done
+
+[ -n "$MODE" ] || { usage >&2; exit 2; }
+
+case "$MODE" in
+  get)
+    curl -sS --max-time 10 "$URL/pain" | json_tool
+    ;;
+  set)
+    if ! printf '%s' "$DOSE" | grep -Eq '^-?[0-9]+([.][0-9]+)?$'; then
+      echo "pain: --dose needs a number, got '$DOSE'" >&2; exit 2
+    fi
+    curl -sS --max-time 10 -X POST -H 'content-type: application/json' \
+      -d "{\"dose\": $DOSE}" "$URL/pain" | json_tool
+    ;;
+esac

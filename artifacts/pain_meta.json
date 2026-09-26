@@ -1,0 +1,14 @@
+{
+  "n_embd": 5120,
+  "dtype": "float16",
+  "byte_order": "little",
+  "file": "pain_vec.f16",
+  "extraction_layer": 63,
+  "steer_layer": 63,
+  "dose_default": 1.0,
+  "dose_scale": 82.27142333984375,
+  "semantics": "hidden_states += dose * vec (dose == paper steering coefficient)",
+  "model": "Qwen/Qwen3.8-27B",
+  "paper": "arXiv 2609.16247",
+  "note": "steer_layer aligned with the AUC-chosen layer used by the vLLM demo (was 48 from the ratio pick)"
+}

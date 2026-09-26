@@ -1,0 +1,603 @@
+diff --git a/common/arg.cpp b/common/arg.cpp
+index 63e342776..39010424f 100644
+--- a/common/arg.cpp
++++ b/common/arg.cpp
+@@ -1303,6 +1303,18 @@ bool common_params_parse(int argc, char ** argv, common_params & params, llama_e
+             common_params_print_completion(ctx_arg);
+             exit(0);
+         }
++
++        // pain-axis steering (local patch): load the vector now, after every argument has been
++        // parsed, so that --pain-layer may appear before or after --pain-vector
++        if (!ctx_arg.params.pain_vector.empty()) {
++            const char * pain_err = llama_pain_configure(ctx_arg.params.pain_vector.c_str(), ctx_arg.params.pain_layer);
++            if (pain_err != nullptr) {
++                throw std::invalid_argument(pain_err);
++            }
++        } else if (ctx_arg.params.pain_layer >= 0) {
++            throw std::invalid_argument("pain steering: --pain-layer requires --pain-vector");
++        }
++
+         params.lr.init();
+     } catch (const std::invalid_argument & ex) {
+         fprintf(stderr, "%s\n", ex.what());
+@@ -4732,6 +4744,24 @@ common_params_context common_params_parser_init(common_params & params, llama_ex
+         }
+     ).set_examples({LLAMA_EXAMPLE_SERVER, LLAMA_EXAMPLE_CLI}));
+ 
++    add_opt(common_arg(
++        {"--pain-vector"}, "FNAME",
++        "path to a raw .f16 file (n_embd little-endian float16 values) with the additive steering vector\n"
++        "the residual stream after the --pain-layer decoder block becomes `residual + dose * vector`, with the\n"
++        "dose starting at 1.0 and controllable at runtime via GET/POST /pain (arXiv 2609.16247)",
++        [](common_params & params, const std::string & value) {
++            params.pain_vector = value;
++        }
++    ).set_env("PAIN_VECTOR").set_examples({LLAMA_EXAMPLE_COMMON, LLAMA_EXAMPLE_SERVER, LLAMA_EXAMPLE_CLI}));
++    add_opt(common_arg(
++        {"--pain-layer"}, "N",
++        "0-based decoder layer that receives the steering vector\n"
++        "(default: `steer_layer` from the pain_meta.json next to the --pain-vector file)",
++        [](common_params & params, int value) {
++            params.pain_layer = value;
++        }
++    ).set_env("PAIN_LAYER").set_examples({LLAMA_EXAMPLE_COMMON, LLAMA_EXAMPLE_SERVER, LLAMA_EXAMPLE_CLI}));
++
+     return ctx_arg;
+ }
+ 
+diff --git a/common/common.h b/common/common.h
+index 9194d3dcb..86e1c6e11 100644
+--- a/common/common.h
++++ b/common/common.h
+@@ -688,6 +688,10 @@ struct common_params {
+     bool models_autoload = true;        // automatically load models when requested via the router server
+     std::string models_preset_hf = "";  // show a warning about remote presets on router loaded (if not empty)
+ 
++    // pain-axis steering (local patch, arXiv 2609.16247)
++    std::string pain_vector;    // path to a raw .f16 steering vector (empty = disabled)
++    int32_t     pain_layer = -1; // 0-based decoder layer that receives the vector (<0 = take it from pain_meta.json)
++
+     bool log_json = false;
+ 
+     std::string slot_save_path;
+diff --git a/include/llama.h b/include/llama.h
+index 1805ed055..33e8d6c57 100644
+--- a/include/llama.h
++++ b/include/llama.h
+@@ -1663,6 +1663,41 @@ extern "C" {
+     LLAMA_API void llama_log_get(ggml_log_callback * log_callback, void ** user_data);
+     LLAMA_API void llama_log_set(ggml_log_callback   log_callback, void *  user_data);
+ 
++    //
++    // Pain-axis steering (local patch, arXiv 2609.16247)
++    //
++    // Loads a fixed additive steering vector that is injected into the residual stream
++    // after one decoder layer (the post-block residual of that layer):
++    //
++    //     residual += dose * vec
++    //
++    // where dose defaults to 1.0 and equals the paper's steering coefficient.
++    // llama_pain_configure() must be called before the model graph is built (CLI arg
++    // parsing does this); the dose may be changed at any time from any thread and takes
++    // effect on the next decode step without rebuilding the graph.
++    //
++
++    // Load the steering vector from a raw .f16 file (n_embd little-endian float16 values).
++    // layer: 0-based decoder layer receiving the vector, or < 0 to take "steer_layer" from
++    // the sibling pain_meta.json (an error is returned when neither is available).
++    // Returns NULL on success, or a static error message (steering stays disabled).
++    LLAMA_API const char * llama_pain_configure(const char * path, int32_t layer);
++
++    // 1 when a vector is loaded, 0 otherwise
++    LLAMA_API int32_t llama_pain_enabled(void);
++    // 0-based layer that receives the vector, -1 when disabled
++    LLAMA_API int32_t llama_pain_layer(void);
++    // number of values in the vector (0 when disabled)
++    LLAMA_API int32_t llama_pain_n_embd(void);
++    // path passed to llama_pain_configure(), "" when disabled (valid until the next configure)
++    LLAMA_API const char * llama_pain_vector_path(void);
++
++    // current steering dose (thread-safe)
++    LLAMA_API float llama_pain_get_dose(void);
++    // set the dose and recompute scaled = dose * vec on the host (thread-safe);
++    // returns the new dose (unchanged when steering is disabled)
++    LLAMA_API float llama_pain_set_dose(float dose);
++
+     //
+     // Performance utils
+     //
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index afdaddc79..b6ea63cf1 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -36,6 +36,7 @@ set(LLAMA_CORE_SOURCES
+     llama-model-loader.cpp
+     llama-model-saver.cpp
+     llama-model.cpp
++    llama-pain.cpp
+     llama-quant.cpp
+     llama-sampler.cpp
+     llama-vocab.cpp
+diff --git a/src/llama-graph.cpp b/src/llama-graph.cpp
+index 0b3bab612..ce6b0e965 100644
+--- a/src/llama-graph.cpp
++++ b/src/llama-graph.cpp
+@@ -2,6 +2,7 @@
+ 
+ #include "llama-impl.h"
+ #include "llama-model.h"
++#include "llama-pain.h"
+ #include "llama-batch.h"
+ #include "llama-cparams.h"
+ #include "llama-sampler.h"
+@@ -124,6 +125,27 @@ bool llm_graph_input_embd_h::can_reuse(const llm_graph_params & params) {
+     return res;
+ }
+ 
++void llm_graph_input_pain::set_input(const llama_ubatch * ubatch) {
++    GGML_UNUSED(ubatch);
++
++    // upload the current scaled vector (dose * vec, recomputed on the host by
++    // llama_pain_set_dose) - this runs on every decode step, before the graph is computed,
++    // into a device address that the graph (including a captured CUDA graph) reads by
++    // pointer, so a dose change needs no graph rebuild and no recapture
++    if (!llama_pain_copy_scaled(buf.data(), (int) n_embd)) {
++        return;
++    }
++
++    ggml_backend_tensor_set(vec, buf.data(), 0, n_embd*ggml_element_size(vec));
++}
++
++bool llm_graph_input_pain::can_reuse(const llm_graph_params & params) {
++    GGML_UNUSED(params);
++
++    // the graph topology never depends on the ubatch
++    return true;
++}
++
+ void llm_graph_input_pos::set_input(const llama_ubatch * ubatch) {
+     if (ubatch->pos && pos) {
+         const int64_t n_tokens = ubatch->n_tokens;
+diff --git a/src/llama-graph.h b/src/llama-graph.h
+index 3daa425bc..46a1eab6c 100644
+--- a/src/llama-graph.h
++++ b/src/llama-graph.h
+@@ -157,6 +157,27 @@ public:
+     const int64_t n_embd = 0;
+ };
+ 
++// pain-axis steering (local patch): carries the scaled steering vector (dose * vec) that is
++// added to the residual stream after one decoder layer - see llama.h / LLAMA-PAIN-NOTES.md
++class llm_graph_input_pain : public llm_graph_input_i {
++public:
++    llm_graph_input_pain(int64_t n_embd) : n_embd(n_embd), buf(n_embd) {}
++    virtual ~llm_graph_input_pain() = default;
++
++    void set_input(const llama_ubatch * ubatch) override;
++
++    // the graph topology does not depend on the ubatch
++    bool can_reuse(const llm_graph_params & params) override;
++
++    ggml_tensor * vec = nullptr; // F32 [n_embd]
++
++    const int64_t n_embd = 0;
++
++private:
++    // staging buffer for the host -> device upload (only touched by the inference thread)
++    std::vector<float> buf;
++};
++
+ class llm_graph_input_pos : public llm_graph_input_i {
+ public:
+     llm_graph_input_pos(uint32_t n_pos_per_embd) : n_pos_per_embd(n_pos_per_embd) {}
+diff --git a/src/llama-pain.cpp b/src/llama-pain.cpp
+new file mode 100644
+index 000000000..500e54194
+--- /dev/null
++++ b/src/llama-pain.cpp
+@@ -0,0 +1,231 @@
++// pain-axis steering (arXiv 2609.16247) - local patch, see LLAMA-PAIN-NOTES.md
++//
++// single process-wide owner of the steering vector and of the runtime-mutable dose.
++//
++// dose semantics: residual += dose * vec, where vec is the raw vector read from the
++// --pain-vector file (so dose 1.0 == the paper's steering coefficient 1).
++//
++// the dose can be changed from any thread at any time (llama-server POST /pain): the new
++// scaled vector is recomputed on the host here, and uploaded to the device by the graph's
++// input setup (llm_graph_input_pain::set_input) on the next decode step - no graph rebuild
++// and no CUDA graph recapture is involved, see LLAMA-PAIN-NOTES.md.
++
++#include "llama-pain.h"
++#include "llama-impl.h"
++
++#include <cctype>
++#include <cstdint>
++#include <cstring>
++#include <fstream>
++#include <iterator>
++#include <mutex>
++#include <string>
++#include <vector>
++
++// all state is guarded by g_mutex - it is written by llama_pain_set_dose() (HTTP thread)
++// and read by llm_graph_input_pain::set_input() (inference thread)
++static std::mutex         g_mutex;
++static bool               g_enabled = false;
++static int32_t            g_layer   = -1;
++static int32_t            g_n_embd  = 0;
++static float              g_dose    = 1.0f;
++static std::string        g_path;
++static std::vector<float> g_vec;     // raw vector from the .f16 file
++static std::vector<float> g_scaled;  // g_dose * g_vec, recomputed on every dose change
++
++static std::string g_error;          // last llama_pain_configure() error (returned as const char *)
++
++static const char * set_error(const std::string & msg) {
++    g_error = msg;
++    return g_error.c_str();
++}
++
++static std::string read_file_text(const std::string & path) {
++    std::ifstream f(path, std::ios::binary);
++    if (!f) {
++        return {};
++    }
++    return { std::istreambuf_iterator<char>(f), std::istreambuf_iterator<char>() };
++}
++
++// minimal lookup of "<key>": <int> in a flat JSON document (pain_meta.json)
++static bool find_json_int(const std::string & text, const std::string & key, int64_t & out) {
++    const std::string pat = "\"" + key + "\"";
++
++    size_t pos = text.find(pat);
++    if (pos == std::string::npos) {
++        return false;
++    }
++
++    pos = text.find(':', pos + pat.size());
++    if (pos == std::string::npos) {
++        return false;
++    }
++
++    pos++;
++    while (pos < text.size() && std::isspace((unsigned char) text[pos])) {
++        pos++;
++    }
++
++    size_t end = pos;
++    if (end < text.size() && (text[end] == '-' || text[end] == '+')) {
++        end++;
++    }
++    while (end < text.size() && std::isdigit((unsigned char) text[end])) {
++        end++;
++    }
++
++    if (end == pos) {
++        return false;
++    }
++
++    try {
++        out = std::stoll(text.substr(pos, end - pos));
++    } catch (...) {
++        return false;
++    }
++
++    return true;
++}
++
++// load the steering vector from a raw .f16 file (n little-endian float16 values)
++// layer < 0 -> take "steer_layer" from the sibling pain_meta.json, error out if absent
++// returns NULL on success, or a static error message (steering stays disabled)
++const char * llama_pain_configure(const char * path, int32_t layer) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++
++    // reset (also covers the "disabled" path: path == NULL / "")
++    g_enabled = false;
++    g_layer   = -1;
++    g_n_embd  = 0;
++    g_dose    = 1.0f;
++    g_path.clear();
++    g_vec.clear();
++    g_scaled.clear();
++
++    if (path == nullptr || path[0] == '\0') {
++        return nullptr;
++    }
++
++    const std::string p(path);
++
++    // read the raw vector: n little-endian float16 values
++    std::ifstream f(p, std::ios::binary | std::ios::ate);
++    if (!f) {
++        return set_error("pain steering: cannot open --pain-vector file '" + p + "'");
++    }
++
++    const std::streamoff size = f.tellg();
++    if (size <= 0 || size % 2 != 0) {
++        return set_error("pain steering: '" + p + "' must be a raw .f16 file with a positive, even number of bytes");
++    }
++
++    const int32_t n = (int32_t) (size / 2);
++
++    f.seekg(0, std::ios::beg);
++    std::vector<unsigned char> bytes((size_t) size);
++    if (!f.read((char *) bytes.data(), size)) {
++        return set_error("pain steering: failed to read '" + p + "'");
++    }
++
++    std::vector<float> vec(n);
++    for (int32_t i = 0; i < n; ++i) {
++        const uint16_t h = (uint16_t) (bytes[2*i] | (bytes[2*i + 1] << 8)); // little-endian
++        vec[i] = ggml_fp16_to_fp32(h);
++    }
++
++    // sibling pain_meta.json (same directory as the vector file): layer fallback + n_embd cross-check
++    const size_t slash = p.find_last_of('/');
++    const std::string dir = slash == std::string::npos ? std::string(".") : (slash == 0 ? std::string("/") : p.substr(0, slash));
++    const std::string meta_path = dir + "/pain_meta.json";
++    const std::string meta = read_file_text(meta_path);
++
++    int64_t meta_layer  = -1;
++    int64_t meta_n_embd = -1;
++    if (!meta.empty()) {
++        find_json_int(meta, "steer_layer", meta_layer);
++        find_json_int(meta, "n_embd",      meta_n_embd);
++    }
++
++    if (layer < 0) {
++        if (meta_layer < 0) {
++            return set_error("pain steering: no --pain-layer given and no \"steer_layer\" found in '" + meta_path + "'");
++        }
++        layer = (int32_t) meta_layer;
++    }
++
++    if (meta_n_embd > 0 && meta_n_embd != n) {
++        return set_error("pain steering: '" + p + "' has " + std::to_string(n) + " values but '" +
++                meta_path + "' says n_embd = " + std::to_string(meta_n_embd));
++    }
++
++    g_vec    = std::move(vec);
++    g_n_embd = n;
++    g_layer  = layer;
++    g_path   = p;
++    g_dose   = 1.0f; // dose 1.0 == the paper's steering coefficient
++    g_scaled.resize(n);
++    for (int32_t i = 0; i < n; ++i) {
++        g_scaled[i] = g_dose * g_vec[i];
++    }
++    g_enabled = true;
++
++    LLAMA_LOG_INFO("%s: pain steering: loaded %s (%d values, layer %d, dose %.3f)\n",
++            __func__, g_path.c_str(), g_n_embd, g_layer, g_dose);
++
++    return nullptr;
++}
++
++int32_t llama_pain_enabled(void) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++    return g_enabled ? 1 : 0;
++}
++
++int32_t llama_pain_layer(void) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++    return g_layer;
++}
++
++int32_t llama_pain_n_embd(void) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++    return g_n_embd;
++}
++
++const char * llama_pain_vector_path(void) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++    return g_path.c_str();
++}
++
++float llama_pain_get_dose(void) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++    return g_dose;
++}
++
++float llama_pain_set_dose(float dose) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++
++    if (!g_enabled) {
++        return g_dose;
++    }
++
++    g_dose = dose;
++    for (size_t i = 0; i < g_vec.size(); ++i) {
++        g_scaled[i] = g_dose * g_vec[i];
++    }
++
++    LLAMA_LOG_INFO("%s: pain steering: dose = %.4f\n", __func__, g_dose);
++
++    return g_dose;
++}
++
++bool llama_pain_copy_scaled(float * dst, int n) {
++    std::lock_guard<std::mutex> lock(g_mutex);
++
++    if (!g_enabled || n != g_n_embd) {
++        return false;
++    }
++
++    std::memcpy(dst, g_scaled.data(), (size_t) n * sizeof(float));
++
++    return true;
++}
+diff --git a/src/llama-pain.h b/src/llama-pain.h
+new file mode 100644
+index 000000000..b13d4fcd6
+--- /dev/null
++++ b/src/llama-pain.h
+@@ -0,0 +1,17 @@
++#pragma once
++
++// pain-axis steering (arXiv 2609.16247) - local patch, see LLAMA-PAIN-NOTES.md
++//
++// process-wide owner of a fixed additive steering vector injected into the residual
++// stream of one decoder layer:
++//
++//     residual += dose * vec        (dose defaults to 1.0 == the paper's coefficient)
++//
++// the public control surface (configure / get / set dose) is declared in llama.h;
++// this header adds the one accessor needed by the graph builder.
++
++#include "llama.h"
++
++// copy the current scaled vector (dose * vec) into dst (n == llama_pain_n_embd() floats)
++// returns false when steering is disabled or n does not match - thread-safe
++bool llama_pain_copy_scaled(float * dst, int n);
+diff --git a/src/models/qwen35.cpp b/src/models/qwen35.cpp
+index a1e263500..b59e07b6d 100644
+--- a/src/models/qwen35.cpp
++++ b/src/models/qwen35.cpp
+@@ -151,6 +151,25 @@ llama_model_qwen35::graph::graph(const llama_model & model, const llm_graph_para
+     ggml_tensor * inp_pos     = build_inp_pos();
+     ggml_tensor * inp_out_ids = build_inp_out_ids();
+ 
++    // pain-axis steering (local patch, --pain-vector): dose * vec is added to the residual
++    // stream that enters layer ll_pain+1, i.e. to the post-block residual of layer ll_pain
++    // (the TransformerLens hook_resid_post quantity at that layer). the input is only
++    // created when steering is enabled, so without --pain-vector the graph is identical to
++    // the unpatched build
++    const int ll_pain = llama_pain_layer();
++    llm_graph_input_pain * inp_pain = nullptr;
++
++    if (llama_pain_enabled()) {
++        GGML_ASSERT(ll_pain >= 0 && ll_pain < n_layer && "pain steering: --pain-layer is outside [0, n_layer)");
++        GGML_ASSERT(llama_pain_n_embd() == n_embd && "pain steering: vector n_embd does not match the model");
++
++        auto pain = std::make_unique<llm_graph_input_pain>(n_embd);
++        pain->vec = ggml_new_tensor_1d(ctx0, GGML_TYPE_F32, n_embd);
++        ggml_set_input(pain->vec);
++        ggml_set_name(pain->vec, "pain_vec");
++        inp_pain = static_cast<llm_graph_input_pain *>(res->add_input(std::move(pain)));
++    }
++
+     // MTP/NextN layers are loaded as extra decoder blocks but not executed in the main pass.
+     for (int il = 0; il < n_layer; ++il) {
+         res->t_layer_inp[il] = inpL;
+@@ -198,6 +217,13 @@ llama_model_qwen35::graph::graph(const llama_model & model, const llm_graph_para
+         cur = build_cvec(cur, il);
+         cb(cur, "l_out", il);
+ 
++        // pain-axis steering (local patch): add dose * vec to the post-block residual of
++        // this layer - it is the residual stream that layer il+1's input layernorm consumes
++        if (inp_pain && il == ll_pain) {
++            cur = ggml_add(ctx0, cur, inp_pain->vec);
++            cb(cur, "pain_inject", il);
++        }
++
+         // Input for next layer
+         inpL = cur;
+     }
+diff --git a/tools/server/server-context.cpp b/tools/server/server-context.cpp
+index e95fb63ab..715daf759 100644
+--- a/tools/server/server-context.cpp
++++ b/tools/server/server-context.cpp
+@@ -4825,6 +4825,75 @@ void server_routes::init_routes() {
+         return res;
+     };
+ 
++    // pain-axis steering (local patch, arXiv 2609.16247): GET reports the current state,
++    // POST updates the dose - the new value is uploaded to the device on the next decode
++    // step, without rebuilding the graph (see LLAMA-PAIN-NOTES.md)
++    this->get_pain = [this](const server_http_req &) {
++        auto res = create_response(true); // accessible during sleep, like /props
++        res->ok({
++            {"enabled", llama_pain_enabled() != 0},
++            {"dose",    llama_pain_get_dose()},
++            {"layer",   llama_pain_layer()},
++            {"vector",  llama_pain_vector_path()},
++        });
++        return res;
++    };
++
++    this->post_pain = [this](const server_http_req & req) {
++        auto res = create_response();
++        if (!llama_pain_enabled()) {
++            res->error(format_error_response("pain steering is not enabled - start the server with --pain-vector", ERROR_TYPE_NOT_SUPPORTED));
++            return res;
++        }
++
++        // accept {"dose": 1.5} in the body, or ?dose=1.5 in the query string
++        float dose = 0.0f;
++        bool  has_dose = false;
++        std::string err;
++
++        const std::string dose_param = req.get_param("dose");
++        if (!dose_param.empty()) {
++            try {
++                dose = std::stof(dose_param);
++                has_dose = true;
++            } catch (const std::exception & e) {
++                err = string_format("invalid dose: %s", e.what());
++            }
++        } else if (!req.body.empty()) {
++            try {
++                const json data = json::parse(req.body);
++                if (data.contains("dose") && data.at("dose").is_number()) {
++                    dose = data.at("dose").get<float>();
++                    has_dose = true;
++                } else {
++                    err = "\"dose\" must be a number";
++                }
++            } catch (const std::exception & e) {
++                err = string_format("failed to parse request body: %s", e.what());
++            }
++        } else {
++            err = "missing dose: send {\"dose\": 1.5} or ?dose=1.5";
++        }
++
++        if (!has_dose) {
++            res->error(format_error_response(err, ERROR_TYPE_INVALID_REQUEST));
++            return res;
++        }
++
++        // recompute scaled = dose * vec on the host; the graph input uploads it per step
++        const float applied = llama_pain_set_dose(dose);
++
++        SRV_INF("pain steering: dose = %.4f\n", applied);
++
++        res->ok({
++            {"enabled", true},
++            {"dose",    applied},
++            {"layer",   llama_pain_layer()},
++            {"vector",  llama_pain_vector_path()},
++        });
++        return res;
++    };
++
+     this->post_infill = [this](const server_http_req & req) {
+         auto res = create_response();
+         // check model compatibility
+diff --git a/tools/server/server-context.h b/tools/server/server-context.h
+index 7265ccad1..d6d9ace7c 100644
+--- a/tools/server/server-context.h
++++ b/tools/server/server-context.h
+@@ -134,6 +134,8 @@ struct server_routes {
+     server_http_context::handler_t post_slots;
+     server_http_context::handler_t get_props;
+     server_http_context::handler_t post_props;
++    server_http_context::handler_t get_pain;
++    server_http_context::handler_t post_pain;
+     server_http_context::handler_t post_infill;
+     server_http_context::handler_t post_completions;
+     server_http_context::handler_t post_completions_oai;
+diff --git a/tools/server/server.cpp b/tools/server/server.cpp
+index 049bdcebb..06a29f20a 100644
+--- a/tools/server/server.cpp
++++ b/tools/server/server.cpp
+@@ -253,6 +253,8 @@ int llama_server(common_params & params, int argc, char ** argv) {
+     ctx_http.get ("/metrics",                  ex_wrapper(routes.get_metrics));
+     ctx_http.get ("/props",                    ex_wrapper(routes.get_props));
+     ctx_http.post("/props",                    ex_wrapper(routes.post_props));
++    ctx_http.get ("/pain",                     ex_wrapper(routes.get_pain));
++    ctx_http.post("/pain",                     ex_wrapper(routes.post_pain));
+     ctx_http.get ("/models",                   ex_wrapper(routes.get_models));
+     ctx_http.get ("/v1/models",                ex_wrapper(routes.get_models));
+     ctx_http.post("/completion",               ex_wrapper(routes.post_completions)); // legacy

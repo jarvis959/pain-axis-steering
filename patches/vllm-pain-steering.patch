@@ -1,0 +1,384 @@
+diff -ruN baseline/vllm/engine/arg_utils.py modified/vllm/engine/arg_utils.py
+--- a/vllm/engine/arg_utils.py
++++ b/vllm/engine/arg_utils.py
+@@ -546,6 +546,12 @@
+     code_revision: str | None = ModelConfig.code_revision
+     hf_token: bool | str | None = ModelConfig.hf_token
+     hf_overrides: HfOverrides = get_field(ModelConfig, "hf_overrides")
++
++    # PAIN-AXIS PATCH: pain steering (https://arxiv.org/abs/2609.16247)
++    pain_vector: str | None = None
++    """Path to a pain_vector .pt artifact; steering stays off when unset."""
++    pain_layer: int | None = None
++    """Decoder layer that receives the vector (overrides the artifact layer)."""
+     model_class_overrides: dict[str, str] = get_field(
+         ModelConfig, "model_class_overrides"
+     )
+@@ -1696,11 +1702,29 @@
+         )
+         parser.add_argument(
+             "--kda-prefill-backend",
+-            dest="kda_prefill_backend",
+-            choices=["auto", "triton", "flashkda"],
++            type=str,
+             default=None,
++            choices=["auto", "triton", "flashkda"],
+             help="Select KDA prefill backend.",
+         )
++        # PAIN-AXIS PATCH: pain steering (https://arxiv.org/abs/2609.16247)
++        pain_group = parser.add_argument_group(
++            title="Pain steering",
++            description="Additive steering-vector injection at one decoder layer.",
++        )
++        pain_group.add_argument(
++            "--pain-vector",
++            type=str,
++            default=None,
++            help="Path to a pain_vector .pt artifact. Enables GET/POST /pain.",
++        )
++        pain_group.add_argument(
++            "--pain-layer",
++            type=int,
++            default=None,
++            help="Decoder layer index that receives the vector (defaults to the "
++                 "layer stored in the artifact).",
++        )
+         return parser
+ 
+     @classmethod
+@@ -1945,6 +1969,13 @@
+         """
+         current_platform.pre_register_and_update()
+ 
++        # PAIN-AXIS PATCH: export to the engine/worker processes, which read the
++        # env (keeps the patch to arg_utils.py: no VllmConfig field needed).
++        if self.pain_vector:
++            os.environ["PAIN_VECTOR"] = str(self.pain_vector)
++            if self.pain_layer is not None:
++                os.environ["PAIN_LAYER"] = str(self.pain_layer)
++
+         device_config = DeviceConfig(device=cast(Device, current_platform.device_type))
+ 
+         envs.validate_environ(self.fail_on_environ_validation)
+diff -ruN baseline/vllm/entrypoints/openai/api_server.py modified/vllm/entrypoints/openai/api_server.py
+--- a/vllm/entrypoints/openai/api_server.py
++++ b/vllm/entrypoints/openai/api_server.py
+@@ -210,6 +210,12 @@
+ 
+     register_vllm_serve_api_routers(app)
+ 
++    # PAIN-AXIS PATCH: GET/POST /pain steering control surface (workers report
++    # enabled=false unless the server was started with --pain-vector).
++    from vllm.pain_axis_api import attach_router as attach_pain_router
++
++    attach_pain_router(app)
++
+     from vllm.entrypoints.openai.models.api_router import (
+         attach_router as register_models_api_router,
+     )
+diff -ruN baseline/vllm/model_executor/models/qwen3_next.py modified/vllm/model_executor/models/qwen3_next.py
+--- a/vllm/model_executor/models/qwen3_next.py
++++ b/vllm/model_executor/models/qwen3_next.py
+@@ -8,6 +8,7 @@
+ import torch
+ from torch import nn
+ 
++from vllm import pain_axis
+ from vllm._aiter_ops import rocm_aiter_ops
+ from vllm.compilation.decorators import support_torch_compile
+ from vllm.config import CacheConfig, ModelConfig, VllmConfig
+@@ -671,6 +672,11 @@
+             self._maybe_add_hidden_state(
+                 aux_hidden_states, layer_idx + 1, hidden_states, residual
+             )
++            # PAIN-AXIS PATCH: additive steering vector at one decoder layer
++            # (arXiv 2609.16247). No-op unless --pain-vector was given.
++            hidden_states, residual = pain_axis.inject(
++                layer_idx, hidden_states, residual, model=self
++            )
+ 
+         if not get_pp_group().is_last_rank:
+             return IntermediateTensors(
+diff -ruN baseline/vllm/pain_axis.py modified/vllm/pain_axis.py
+--- a/vllm/pain_axis.py
++++ b/vllm/pain_axis.py
+@@ -0,0 +1,181 @@
++# SPDX-License-Identifier: Apache-2.0
++# SPDX-FileCopyrightText: Copyright contributors to the vLLM project
++"""Pain-axis steering state (arXiv 2609.16247), own minimal patch.
++
++This module is the single worker-process owner of the steering vector. It is
++configured once by the GPU worker right after the model is loaded, and read by the
++model's decoder loop (see ``Qwen3NextModel.forward``) while the forward pass runs
++inside captured CUDA graphs.
++
++Dose semantics: ``hidden_states += dose * vec`` where ``vec`` is the raw
++difference-in-means vector produced by the extraction step, so ``dose`` is exactly
++the coefficient used by the paper's steering ladder (their script 4.2/01).
++
++The dose lives in a one-element CUDA tensor mutated **in place**: the value is read
++from device memory at replay time, so changing it never triggers a CUDA-graph
++recapture or a torch.compile recompile (the tensor object identity never changes).
++"""
++from __future__ import annotations
++
++import os
++from pathlib import Path
++from typing import Any
++
++import torch
++
++from vllm.logger import init_logger
++
++logger = init_logger(__name__)
++
++_LAYER: int | None = None
++_VEC: torch.Tensor | None = None
++_ALPHA: torch.Tensor | None = None
++_SOURCE: str | None = None
++_OWNER = None  # model module that owns the dose buffer (graph input, see attach_owner)
++
++
++def attach_owner(model) -> None:
++    """Register the dose tensor as a buffer on the model module.
++
++    torch.compile / CUDA-graph capture must see the dose as a *graph input*, not a
++    python global: a global tensor read can be constant-folded at trace time (that is
++    exactly how a dose set to 0 at boot vanished from the captured graph), while a
++    module buffer is lifted as an input whose storage is read at replay. Same tensor
++    object, so mutations from the /pain route stay visible without recapture.
++    """
++    global _OWNER
++    if _ALPHA is None or model is None:
++        return
++    if getattr(model, "_pain_alpha", None) is None:
++        model.register_buffer("_pain_alpha", _ALPHA, persistent=False)
++    _OWNER = model
++
++
++def configure(vllm_config: Any = None, device: torch.device | str | None = None) -> dict[str, Any]:
++    """Load the steering vector declared by ``--pain-vector`` / ``PAIN_VECTOR``.
++
++    Idempotent: calling it twice with the same source is a no-op, so weight reloads
++    keep the current dose.
++    """
++    global _LAYER, _VEC, _ALPHA, _SOURCE
++
++    path = os.environ.get("PAIN_VECTOR")
++    layer_arg = os.environ.get("PAIN_LAYER")
++    if vllm_config is not None and not path:
++        model_cfg = getattr(vllm_config, "model_config", None)
++        path = getattr(vllm_config, "pain_vector", None) or getattr(
++            model_cfg, "pain_vector", None)
++        layer_arg = getattr(vllm_config, "pain_layer", None) or getattr(
++            model_cfg, "pain_layer", None)
++
++    if not path:
++        if _VEC is None:
++            logger.info("pain steering: disabled (no --pain-vector / PAIN_VECTOR)")
++        return info()
++
++    if _SOURCE == str(path) and _VEC is not None:
++        return info()
++
++    path = str(Path(path).expanduser())
++    payload = torch.load(path, map_location="cpu", weights_only=False)
++    dose_scale = 1.0
++    if isinstance(payload, dict):
++        vec = payload.get("vec", payload.get("s2_pain_vector"))
++        artifact_layer = payload.get("steer_layer", payload.get("layer"))
++        # The artifact stores a unit-normalized vector plus the scale that makes
++        # `dose * dose_scale * vec` equal to `dose * raw_vector`, so the CLI dose
++        # keeps the paper's coefficient semantics.
++        dose_scale = float(payload.get("dose_scale", 1.0) or 1.0)
++    else:
++        vec, artifact_layer = payload, None
++    if vec is None:
++        raise ValueError(f"{path}: no steering vector tensor found")
++    if dose_scale != 1.0:
++        vec = vec * dose_scale
++
++    layer = layer_arg if layer_arg is not None else artifact_layer
++    if layer is None:
++        raise ValueError("pain layer not given: pass --pain-layer (or PAIN_LAYER)")
++
++    dtype = torch.bfloat16
++    if vllm_config is not None:
++        try:
++            dtype = vllm_config.model_config.dtype
++        except Exception:  # pragma: no cover - defensive
++            pass
++    if device is None:
++        device = torch.device("cuda", torch.cuda.current_device())
++
++    _VEC = vec.to(device=device, dtype=dtype).contiguous()
++    _ALPHA = torch.zeros(1, dtype=dtype, device=device)
++    _LAYER = int(layer)
++    _SOURCE = str(path)
++    logger.info(
++        "pain steering: loaded %s (layer %d, dtype %s, norm %.3f)",
++        path, _LAYER, dtype, float(_VEC.float().norm()),
++    )
++    return info()
++
++
++def enabled() -> bool:
++    return _ALPHA is not None
++
++
++def _dose_tensor() -> torch.Tensor | None:
++    if _ALPHA is None:
++        return None
++    owner_alpha = getattr(_OWNER, "_pain_alpha", None) if _OWNER is not None else None
++    return owner_alpha if owner_alpha is not None else _ALPHA
++
++
++def inject(
++    layer_idx: int,
++    hidden_states: torch.Tensor,
++    residual: torch.Tensor | None,
++    model=None,
++) -> tuple[torch.Tensor, torch.Tensor | None]:
++    """Add ``dose * vec`` to the stream that enters the layer after ``layer_idx``.
++
++    vLLM keeps the residual stream split as ``(hidden_states, residual)`` with the
++    next layer folding them inside its fused input layernorm, so the post-block
++    residual of ``layer_idx`` (the TransformerLens ``hook_resid_post`` quantity) is
++    their sum: bumping ``residual`` places the vector exactly there.
++    """
++    alpha = None
++    if model is not None:
++        # preferred: the traced module's own buffer -> a real graph input
++        alpha = getattr(model, "_pain_alpha", None)
++    if alpha is None:
++        alpha = _dose_tensor()
++    if alpha is None or layer_idx != _LAYER:
++        return hidden_states, residual
++
++    vec = _VEC
++    if vec.dtype != hidden_states.dtype:
++        vec = vec.to(hidden_states.dtype)
++    add = alpha.to(hidden_states.dtype) * vec
++    if residual is not None:
++        return hidden_states, residual + add
++    return hidden_states + add, residual
++
++
++def set_dose(dose: float) -> float:
++    if _ALPHA is None:
++        raise RuntimeError("pain steering is not enabled on this worker")
++    _ALPHA.fill_(float(dose))  # in-place: visible to CUDA-graph replay
++    return float(_ALPHA.item())
++
++
++def get_dose() -> float:
++    if _ALPHA is None:
++        raise RuntimeError("pain steering is not enabled on this worker")
++    return float(_ALPHA.item())
++
++
++def info() -> dict[str, Any]:
++    return {
++        "enabled": _ALPHA is not None,
++        "layer": _LAYER,
++        "source": _SOURCE,
++        "dose": float(_ALPHA.item()) if _ALPHA is not None else None,
++    }
+diff -ruN baseline/vllm/pain_axis_api.py modified/vllm/pain_axis_api.py
+--- a/vllm/pain_axis_api.py
++++ b/vllm/pain_axis_api.py
+@@ -0,0 +1,69 @@
++# SPDX-License-Identifier: Apache-2.0
++# SPDX-FileCopyrightText: Copyright contributors to the vLLM project
++"""/pain admin routes: read and change the pain-steering dose of a running server.
++
++Mounted from ``vllm.entrypoints.openai.api_server.build_app``. The routes are always
++registered but report ``enabled: false`` when the server was started without
++``--pain-vector``, so the patch has zero behavioural footprint otherwise.
++"""
++from __future__ import annotations
++
++from http import HTTPStatus
++from typing import Any
++
++from fastapi import APIRouter, HTTPException, Request
++from fastapi.responses import JSONResponse
++
++router = APIRouter()
++
++
++def _engine(request: Request) -> Any:
++    client = getattr(request.app.state, "engine_client", None)
++    if client is None:
++        raise HTTPException(status_code=HTTPStatus.SERVICE_UNAVAILABLE.value,
++                            detail="engine client not ready")
++    return client
++
++
++@router.get("/pain")
++async def get_pain(request: Request):
++    """Report the current dose, steering layer and vector source (per worker)."""
++    try:
++        results = await _engine(request).collective_rpc("get_pain_dose")
++    except Exception as exc:  # workers may raise when steering is off
++        raise HTTPException(status_code=HTTPStatus.CONFLICT.value, detail=str(exc))
++    first = results[0] if results else {}
++    return JSONResponse(content={"dose": first.get("dose"), "enabled": first.get("enabled"),
++                                 "layer": first.get("layer"), "source": first.get("source"),
++                                 "workers": results})
++
++
++@router.post("/pain")
++async def set_pain(request: Request):
++    """Set the dose: ``POST /pain {"dose": 1.5}`` or ``POST /pain?dose=1.5``."""
++    body: dict[str, Any] = {}
++    if request.headers.get("content-type", "").startswith("application/json"):
++        try:
++            body = await request.json()
++        except Exception:
++            body = {}
++    raw = body.get("dose", request.query_params.get("dose"))
++    if raw is None:
++        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST.value,
++                            detail="missing 'dose' (JSON body or ?dose= query)")
++    try:
++        dose = float(raw)
++    except (TypeError, ValueError):
++        raise HTTPException(status_code=HTTPStatus.BAD_REQUEST.value,
++                            detail=f"dose must be a number, got {raw!r}")
++
++    try:
++        results = await _engine(request).collective_rpc("set_pain_dose", args=(dose,))
++    except Exception as exc:
++        raise HTTPException(status_code=HTTPStatus.CONFLICT.value, detail=str(exc))
++    applied = results[0] if results else dose
++    return JSONResponse(content={"dose": applied, "workers": results})
++
++
++def attach_router(app) -> None:
++    app.include_router(router)
+diff -ruN baseline/vllm/v1/worker/gpu_worker.py modified/vllm/v1/worker/gpu_worker.py
+--- a/vllm/v1/worker/gpu_worker.py
++++ b/vllm/v1/worker/gpu_worker.py
+@@ -575,6 +575,21 @@
+                 self.model_runner.get_model(),
+             )
+ 
++        # PAIN-AXIS PATCH: load the steering vector now that CUDA + the model are up,
++        # and register the dose as a model buffer so compiled/captured graphs read it.
++        from vllm import pain_axis
++        pain_axis.configure(self.vllm_config, device=self.device)
++        pain_axis.attach_owner(self.model_runner.get_model())
++
++    # PAIN-AXIS PATCH: control surface for the /pain admin route (collective_rpc).
++    def set_pain_dose(self, dose: float) -> float:
++        from vllm import pain_axis
++        return pain_axis.set_dose(float(dose))
++
++    def get_pain_dose(self) -> dict[str, Any]:
++        from vllm import pain_axis
++        return pain_axis.info()
++
+     def update_config(self, overrides: dict[str, Any]) -> None:
+         self.model_runner.update_config(overrides)
+ 

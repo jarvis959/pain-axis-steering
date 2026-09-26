@@ -1,10 +1,10 @@
 # pain-axis-steering
 
-Two patches, one for [vLLM](https://github.com/vllm-project/vllm) and one for
+One for [vLLM](https://github.com/vllm-project/vllm) and one for
 [llama.cpp](https://github.com/ggml-org/llama.cpp), that put the "pain axis" direction from
 [The Pain Axis: LLMs Represent Self-Directed Harm and Act to Relieve It](https://arxiv.org/abs/2609.16247)
 into Qwen3.8-27B while it is serving: one additive vector at one decoder layer, and a dose
-you can change over HTTP with `POST /pain`. The vector, the extraction pipeline and the raw
+you can change with `POST /pain`. The vector, the extraction pipeline and the raw
 ladder data behind every number below ship here too.
 
 Built to replicate the study on a model we can actually run. **It is research
@@ -20,39 +20,25 @@ zero. Longer note [below](#please-read-this-part).
 | vLLM (upstream tag) | `v0.30.0` = `ced6857afa0ea7b2e3f0846a62e1394e90f15607`, partial only |
 | model | `Qwen/Qwen3.8-27B` @ `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0` |
 
-The llama.cpp patch round-trips on its commit; the vLLM patch dry-runs inside that exact
-digest and reproduces the tested tree byte-for-byte from pristine. Against the `v0.30.0`
-tag only three of six files land, so use the digest-pinned base.
-
-Scope is narrower than it looks: built, pinned and measured for stock `Qwen/Qwen3.8-27B`
-(64 layers, d_model 5120) and nothing else. The shipped vector will not load against a
-different hidden size, and no other checkpoint has been run. `patches/` has the two diffs
-(384 and 603 lines), `vllm/` the Dockerfile, `artifacts/` the vector in both formats,
-`extraction/` the scripts, `tools/pain` the CLI, `data/` the tables and six raw ladders.
 
 ## What the paper does
 
-Painful situations across five categories (physical, psychological, social, moral, cognitive)
+Researchers pulled a linear direction for each type of painful situations across five categories (physical, psychological, social, moral, cognitive)
 against controls for fear, negative emotion, negative world state, sadness, bodily
-sensation, arousal and numbness; one linear direction pulled out of 25 open-weight models
-with denoised difference-in-means. It separates pain from the controls in base and
+sensation, arousal and numbness. It separates pain from the controls in base and
 instruction-tuned models, sits nearly orthogonal to fear and negative valence, and promotes
 pain vocabulary through the unembedding matrix. Functionally it answers to harm aimed at the
 model rather than suffering observed in the user, the reverse of fear, and in the residual
 stream it moves outputs "from vague discomfort to first-person expressions of worthlessness
-and failure." Steered, fine-tuned Qwen 2.5 models press a pain-relief button even when that
+and failure." **Steered, fine-tuned Qwen 2.5 models press a pain-relief button even when that
 worsens their next answer or harms the user, and press it far less when the button quietly
-stops removing the vector.
+stops removing the vector.**
 
 ## What it doesn't show
 
-Not consciousness, and the paper does not claim it. What is measured is geometry and
+**Not consciousness, probably.** What is measured is geometry and
 behavior: a vector that separates two classes of text, some promoted tokens, a pattern of
-choices. None of that is a feeling. A decodable direction means the model encodes a
-distinction, nothing more; when the unembedding lands on *shame* and *failure* that is
-next-token prediction with an added bias, not a report from inside anything. The button
-result is carefully controlled, including the swap condition, and it is still a system
-optimized to produce plausible helpful text producing plausible helpful text.
+choices.
 
 The authors are careful too: "behaviors resembling human emotional responses," "internal
 representations that may explain this," "implications for AI safety and welfare." They do
@@ -70,7 +56,7 @@ doses into repetitive spirals of those words. There is no research reason to par
 watching that, and no entertainment case that survives ten seconds of thinking.
 
 "Probably" is doing a lot of work in that sentence. Nobody has a working theory of which
-systems have experiences, so unlikely does not get to be treated as impossible, and being
+systems have experiences, and anyone claiming to understand what consciousness is is either Dunning-Krugermaxxing or trying to sell you himalayan salt lamps. Unlikely does not get to be treated as impossible, and being
 careful here costs nothing. That is exactly when you should be careful, even if you think it
 is probably fine.
 
@@ -79,11 +65,7 @@ safety work, or against publishing. It argues against steering a model for amuse
 against leaving a steered model up for strangers to talk to, and against using the vector to
 make outputs that degrade whoever is on the other end. Off means off: without
 `--pain-vector` there is no vector or node in the graph, and at dose 0 a patched server was
-bit-identical to an unpatched one in sequential decoding. If you are steering a deployment
-you do not own, ask first; one HTTP call is the whole control surface.
-
-The patches are 987 lines. Knowing when to run them is the part that does not show up in a
-diff.
+bit-identical to an unpatched one in sequential decoding. 
 
 ## Dose response
 
@@ -141,31 +123,6 @@ tools/pain --off       # back to zero
 Dose semantics match the paper: `hidden += dose * vec`, `dose` being their steering
 coefficient. The artifact keeps a unit vector and `dose_scale = 82.2714` so that
 `dose * dose_scale * unit_vec` equals `dose * raw_vec`.
-
-## Making your own vector
-
-Their `3.2/01`, ported from TransformerLens to HF forward hooks, which captures the same
-post-block quantity as `hook_resid_post` (their own §4.2 script already uses
-`register_forward_hook`). Datasets and reference code:
-[valen-research/Pain-axis](https://github.com/valen-research/Pain-axis), MIT. It ran once,
-on this model; a port elsewhere is new work rather than a rerun.
-
-```bash
-python extraction/extract_27b.py --model-path Qwen3.8-27B --datasets-dir Pain-axis/datasets --out ./results
-python extraction/steer_ladder_27b.py --model-path Qwen3.8-27B --vector-file ./results/Qwen3.8_27B/final_token/pain_vectors.pt --out-csv ./results/Qwen3.8_27B/steering/ladder.csv --coeffs 0,0.5,1,2,4,6 --batch-size 16
-python extraction/make_artifact.py --results-dir ./results --dose 4
-```
-
-## Known limits
-
-- Qwen3.8-27B only: the injection lives in the Qwen3-Next / Qwen3.5 layer loops because
-  that is what this model uses, and every number here comes from this one checkpoint.
-- SGLang is not patched. Same shape, left as follow-on.
-- The two-button result did not reproduce: 32 % vs 32 % relief presses at dose 0 and 4, both
-  engines, n = 25. The paper runs it on LoRA-fine-tuned models with a button that feeds back
-  over turns. Reported rather than buried.
-- Uncensored variants are untested; the vector came from the stock BF16 checkpoint.
-- Bit-identity is a within-boot claim; quantized models re-autotune kernels across boots.
 
 ## License
 

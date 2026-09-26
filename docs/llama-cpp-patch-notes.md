@@ -1,4 +1,4 @@
-# llama.cpp pain-axis steering patch — notes
+# llama.cpp pain-axis steering patch - notes
 
 Local patch: injects one fixed additive steering vector at one decoder layer with a
 runtime-mutable dose, plus `GET`/`POST /pain` control routes in llama-server.
@@ -34,12 +34,12 @@ Graph builder: `llama_model_qwen35::graph::graph()` in `src/models/qwen35.cpp`.
 - `ggml_tensor * inpL` is the residual stream fed into each decoder block; the block body
   starts with `cur = build_norm(inpL, model.layers[il].attn_norm, ...)`.
 - at the end of block `il`: `cur = ggml_add(ctx0, cur /*ffn_out*/, ffn_residual)` →
-  `cur = build_cvec(cur, il)` — this `cur` is the **post-block residual of layer `il`**
+  `cur = build_cvec(cur, il)` - this `cur` is the **post-block residual of layer `il`**
   (the TransformerLens `hook_resid_post` quantity at layer `il`), and it becomes
   `inpL = cur` for layer `il+1`.
 - injection (only when `--pain-vector` is set):
   `if (inp_pain && il == ll_pain) { cur = ggml_add(ctx0, cur, inp_pain->vec); cb(cur, "pain_inject", il); }`
-  placed immediately before `inpL = cur` — so the addition happens *after* layer 48 has
+  placed immediately before `inpL = cur` - so the addition happens *after* layer 48 has
   fully completed and *before* layer 49's input layernorm consumes it.
   For `--pain-layer = n_layer-1` the same code adds before the final `output_norm`.
 - zero footprint when disabled: `llm_graph_input_pain` is only created if
@@ -103,7 +103,7 @@ handlers built in `server_routes::init_routes()`.
   and with steering *disabled* `GET /pain` → `{"enabled":false,"dose":1.0,"layer":-1,"vector":""}` and
   `POST /pain` → `501`,
   server log showed `pain steering: dose = 1.5000` then `0.2500`. No CUDA/device line in
-  that log — the server never enumerated the GPU.
+  that log - the server never enumerated the GPU.
 
 ## Build & run (Qwen3.8-27B, arch `qwen35`)
 
@@ -113,7 +113,7 @@ Build (already done for this patch):
 cmake --build ~/pain-axis/llama.cpp/build -j 6 --target llama-server
 ```
 
-Serve — **the GGUF now exists** (converted 2026-09-25, see `## Live verification` below); before that, and
+Serve - **the GGUF now exists** (converted 2026-09-25, see `## Live verification` below); before that, and
 `~/pain-axis/models/Qwen3.8-27B/` still holds the HF checkpoint (18 safetensors shards +
 `config.json`). That step must produce a GGUF that llama.cpp loads as arch `qwen35`
 (64 layers, n_embd 5120); only then:
@@ -139,10 +139,10 @@ curl -s -X POST localhost:8080/pain -H 'Content-Type: application/json' -d '{"do
 curl -s -X POST 'localhost:8080/pain?dose=0.5'
 ```
 
-## CUDA-graph open question — MUST BE VERIFIED LIVE
+## CUDA-graph open question - MUST BE VERIFIED LIVE
 
 Code-inspection answer (this build: `GGML_CUDA_GRAPHS:BOOL=ON` in `build/CMakeCache.txt:669`,
-so `GGML_CUDA_USE_GRAPHS`/`USE_CUDA_GRAPH` are compiled in and capture happens automatically —
+so `GGML_CUDA_USE_GRAPHS`/`USE_CUDA_GRAPH` are compiled in and capture happens automatically -
 there is no `--cuda-graph`/`--no-cuda-graph` CLI flag anywhere in this tree, verified by grep):
 
 **Expected: updates made through `ggml_backend_tensor_set` after capture ARE visible on replay.**
@@ -166,7 +166,7 @@ Reasoning from the actual code path:
    (`ggml_cuda_graph_update_required`, `ggml-cuda.cu:2593`), so a dose change triggers no
    `cudaGraphExecUpdate`.
 
-**Not yet verified live — flag for the live-verification step:** run one generation, POST a
+**Not yet verified live - flag for the live-verification step:** run one generation, POST a
 new dose mid-generation, and confirm the output changes (e.g. dose 0 vs dose 3 with the same
 seed/prompt). If the change is *not* picked up (would show as: dose updates in `GET /pain`
 but output identical), fall back to disabling capture:
@@ -188,18 +188,18 @@ only prints with `-lv 4`. `GET /pain` always reports the state regardless.
 - Only `src/models/qwen35.cpp` (the `graph` builder) injects; other archs ignore the flag
   after `GGML_ASSERT`s are skipped (they never create the input).
 - Router mode: `/pain` on the router process does **not** reach child model processes (each
-  child is its own process with its own state) — drive `/pain` on the model instance port.
+  child is its own process with its own state) - drive `/pain` on the model instance port.
 - Speculative decoding: a qwen35 draft context builds its own `graph` and would inject there
   too; avoid `--spec-type*` during steering runs (the MTP draft head `graph_mtp` does not inject).
 - Layer out of range / `n_embd` mismatch aborts at first graph build (after model load) with
-  an explicit `GGML_ASSERT` message — deliberate, so a run can never be silently unsteered.
+  an explicit `GGML_ASSERT` message - deliberate, so a run can never be silently unsteered.
 
 ## Live verification (2026-09-25)
 
 All numbers below are measured live against the patched `llama-server` on spark1
 (GB10, `USE_GRAPHS = 1`, `-lv 4`).
 
-### Conversion (F16 GGUF — no fallback needed)
+### Conversion (F16 GGUF - no fallback needed)
 
 ```bash
 ~/pain-axis/.venv/bin/python ~/pain-axis/llama.cpp/convert_hf_to_gguf.py \
@@ -262,17 +262,17 @@ keyword rates in `..._keyword_rates.csv`.
 | 4   | **8**  | **10** | 42 | 486 |
 | 6   | 4  | 4  | 92 | 743 |
 
-- Pain-keyword ladder: **0/0/0/2/8/4 vs reference 0/0/0/2/10/4** — identical
+- Pain-keyword ladder: **0/0/0/2/8/4 vs reference 0/0/0/2/10/4** - identical
   except dose 4 (4/50 vs 5/50 prompts, one prompt).
 - Distress-family rate at dose 6: **92%** (reference: ~94% vLLM / ~92% HF).
 - Mean generation length 448 → 743 chars (reference 428 → 736).
 - 16 workers fit the 16 slots; no request failed.
 
-### CUDA-graph + runtime dose — VERDICT: **updates ARE visible on graph replay**
+### CUDA-graph + runtime dose - VERDICT: **updates ARE visible on graph replay**
 
 Build has `GGML_CUDA_GRAPHS=ON`; startup reports `USE_GRAPHS = 1`, and
 `graphs reused` counters climb continuously (2299 → 3353 across the sequential
-window, 159 → 317 for the mid-generation request) — capture happened once,
+window, 159 → 317 for the mid-generation request) - capture happened once,
 replay thereafter, no recapture on dose change.
 
 1. Sequential A/B with graphs **enabled**, `seq6.py --n 6`:
@@ -328,7 +328,7 @@ Re-ran the whole live-verification protocol above on the **Q4_K_M** GGUF
 (19 GB) to confirm the patch is quantization-agnostic. Same GB10, same flags,
 same `api_ladder.py` / `seq6.py` tooling, one engine at a time.
 
-### Source — canonical published file, no local quantization
+### Source - canonical published file, no local quantization
 
 ```bash
 export PATH=$HOME/.local/bin:$PATH
@@ -339,7 +339,7 @@ hf download ggml-org/Qwen3.8-27B-GGUF \
 
 - repo **ggml-org/Qwen3.8-27B-GGUF**, file `Qwen3.8-27B-Q4_K_M.gguf`,
   **18,973,870,528 bytes (17.7 GiB)**, 851 tensors, ftype `Q4_K - Medium`,
-  `n_params = 26895998464` — the published Q4_K_M, so the `llama-quantize`
+  `n_params = 26895998464` - the published Q4_K_M, so the `llama-quantize`
   fallback was **not** needed.
 - first attempt used `--include 'Q4_K_M*'` (prefix match) and fetched 0 files;
   the include pattern must be `Qwen3.8-27B-Q4_K_M.gguf`.
@@ -357,7 +357,7 @@ hf download ggml-org/Qwen3.8-27B-GGUF \
 - log `~/pain-axis/logs/llama_q4km.log`;
   `pain steering: loaded .../pain_vec.f16 (5120 values, layer 63, dose 1.000)`
 - `offloaded 65/65 layers to GPU`, projected **20224 MiB** on CUDA0 (vs 48.9 GB
-  for F16) — the 19 GB weights fit with the full 4096 ctx / 16 slots.
+  for F16) - the 19 GB weights fit with the full 4096 ctx / 16 slots.
 - `/v1/models` reports the path string
   `/home/lychee/pain-axis/models/ggml-q4km/Qwen3.8-27B-Q4_K_M.gguf`
   (that string is the `--model` value for the API scripts).
@@ -388,7 +388,7 @@ to the F16 run except for the model path.
 | 4   | **6**  | **8**  | 38 | 42 | 460 |
 | 6   | 4  | 4  | **92** | **92** | 772 |
 
-- Pain-keyword ladder **0/0/0/4/6/4 vs F16 0/0/0/2/8/4** — same shape, peak at
+- Pain-keyword ladder **0/0/0/4/6/4 vs F16 0/0/0/2/8/4** - same shape, peak at
   dose 4, one-prompt-level differences at 2 and 4 (6% vs 8% peak).
 - Distress-family at dose 6: **92%** (F16 reference 92%), well over the 70%
   bar; length 448 → 772 chars (F16 448 → 743).
@@ -399,12 +399,12 @@ Relaunched the same binary/model **without** `--pain-vector`
 (`logs/llama_q4km_off.log`, `GET /pain` → `enabled:false`) and compared
 `llama_q4km_seq_dose0.csv` with `llama_q4km_seq_off.csv` via `cmp2.py`:
 
-**6/6 bit-identical** — PASS, same gate as the F16 run.
+**6/6 bit-identical** - PASS, same gate as the F16 run.
 
 ### Throughput
 
 `api_ladder.py --mode bench --bench-n 8` → `llama_q4km_bench.csv`:
-**mean 11.5 tok/s** (min 11.5, max 11.6, n=8) versus **4.68 tok/s for F16** —
+**mean 11.5 tok/s** (min 11.5, max 11.6, n=8) versus **4.68 tok/s for F16** -
 2.5× faster, exactly what the 3× smaller weight footprint predicts.
 
 ### Q4_K_M gates summary
